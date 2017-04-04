@@ -9,18 +9,27 @@
 <body>
     <nav>
         <ul>
-            <li>Home</li>
-            <li>Team</li>
-            <li>About us</li>
-            <li>Movies</li>
-            <li>Contacto</li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about-us">About us</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#movies">Movies</a></li>
+            <li><a href="#contact">Contacto</a></li>
         </ul>
     </nav>
-    <header>
+    <header id="home">
         <h1>The Avengers</h1>
     </header>
     <main>
-        <section>
+        <section id="about-us">
+            <header>
+                <h2>About us</h2>
+            </header>
+            <video src="assets/video/video.mp4" controls>
+                Video about avengers
+            </video>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia aperiam perferendis perspiciatis eum aliquam odio, obcaecati quam tempore numquam quibusdam saepe enim officiis, vero impedit consequuntur eaque sit non similique! </p>
+        </section>
+        <section id="team">
             <article>
                 <img src="assets/img/profiles/ironman.jpg" alt="Iron Man">
                 <h3>Iron Man</h3>
@@ -58,22 +67,22 @@
                 <p>A master archer working as an agent for S.H.I.E.L.D</p>
             </article>
         </section>
-        <section>
+        <section id="movies">
             <header>
                 <h2>Movies</h2>
                 <article>
                     <img src="assets/img/movie1.jpg" alt="The Avengers 2012">
-                    <h3>The Avengers <small>(2012)</small></h3>
+                    <h3>The Avengers <time datetime="2012-01-01">(2012)</time></h3>
                     <p>Nick Fury, the director of S.H.I.E.L.D., gathers the superheroes Iron Man, Thor, Captain America, the Hulk, Black Widow and Hawkeye to fight Thor's brother Loki, who plots to subjugate the Earth.</p>
                 </article>
                 <article>
                     <img src="assets/img/movie2.jpg" alt=">Avengers: Age of Ultron 2015">
-                    <h3>Avengers: Age of Ultron <small>(2015)</small></h3>
+                    <h3>Avengers: Age of Ultron <time datetime="2015-01-01">(2015)</time></h3>
                     <p>Iron Man, Captain America, Thor, the Hulk, Black Widow, and Hawkeye must work together as the Avengers to defeat Ultron, a technological enemy bent on human extinction, while encountering the powerful twins Pietro and Wanda Maximoff, as well as the new entity Vision.</p>
                 </article>
             </header>
         </section>
-        <section>
+        <section id="contact">
             <header>
                 <h2>Contact</h2></header>
             <form action="//backend.com/contact" novalidate>
@@ -95,11 +104,19 @@
     </main>
     <footer>
         <ul>
-            <li>website</li>
-            <li>facebook</li>
-            <li>twitter</li>
+            <li>
+                <a href="http://marvel.com/avengers" target="_blank">website</a></li>
+            <li>
+                <a href="https://www.facebook.com/avengers/" target="_blank">facebook</a></li>
+            <li>
+                <a href="https://twitter.com/avengers" target="_blank">twitter</a></li>
+            <li>
+                <a href="https://www.instagram.com/avengersmovie/" target="_blank">instagram</a></li>
         </ul>
-        <p>Marvel Studios 2017</p>
+        <p>
+            <mark>Marvel Studios 2017</mark>
+            <time datetime="2017-04-04"></time>
+        </p>
     </footer>
 </body>
 
