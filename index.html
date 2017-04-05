@@ -15,17 +15,20 @@
     <meta name="keywords" content="babel, example, html5, css3, js">
     <title>The Avengers</title>
     <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/header.css">
 </head>
 
 <body>
-    <nav style="background-color: red;font-size: 3em">
+    <nav id="nav">
+        <a href="#home"><img src="assets/img/logo.gif" alt="The Avengers Logo"></a>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about-us">About us</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#movies">Movies</a></li>
-            <li><a href="#contact">Contacto</a></li>
+            <li><a class="nav-item active" href="#home">Home</a></li>
+            <li><a class="nav-item" href="#about-us">About us</a></li>
+            <li><a class="nav-item" href="#team">Team</a></li>
+            <li><a class="nav-item" href="#movies">Movies</a></li>
+            <li><a class="nav-item" href="#contact">Contacto</a></li>
         </ul>
     </nav>
     <header id="home">
