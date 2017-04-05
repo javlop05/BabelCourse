@@ -2,3 +2,36 @@ body {
     margin: 0;
     font-size: 16px;
 }
+
+h1 {
+    font-size: 35px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+#team {
+    font-size: 1em;
+}
+
+#team article {
+    font-size: 0.9rem;
+    /*Se aplica sobre la fuente base, los 16px y no los 2em * 16px */
+}

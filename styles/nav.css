@@ -1,49 +1,40 @@
-nav {
+.nav {
     background-color: black;
     font-size: 1.1em;
-    /*Las unidades em se multiplica por el tamaño de la fuente padre (en nuestro caso de body)*/
     color: white;
 }
 
-nav li {
+.nav .nav-item {
     list-style: none;
     display: inline-block;
 }
 
-nav .nav-item {
+.nav .nav-item > a {
     color: white;
     text-decoration: none;
     height: 100%;
     padding: 10px;
-    /*margin-top: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    margin-left: 5px;*/
 }
 
-nav .nav-item.active {
+.nav .nav-item.nav-item--active > a,
+.nav .nav-item > a:hover {
     background-color: white;
     color: black;
 }
 
-
-/*Selector de hijo inmediato, solo se aplica a los hijos directos, no a los nietos por ejemplo*/
-
-nav > a {
+.nav .nav-logo {
     display: inline-block;
-    /*Para poder aplicar margin y que se comporte como una caja*/
     margin: 10px;
 }
 
-nav > a + ul {
-    display: inline-block;
-    width: 80%;
-    /*Por defecto deja un padding para que los puntitos puedan entrar*/
+.nav .nav-items {
     padding: 0;
+    width: 80%;
+    display: inline-block;
     text-align: right;
     margin: 0;
 }
 
-nav > a img {
+.nav .nav-logo img {
     height: 30px;
 }
