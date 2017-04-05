@@ -1,0 +1,12 @@
+#team {
+    font-size: 1em;
+}
+
+#team article {
+    font-size: 0.9rem;
+    /*Se aplica sobre la fuente base, los 16px y no los 2em * 16px */
+}
+
+#team article img {
+    width: 100%;
+}

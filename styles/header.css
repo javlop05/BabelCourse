@@ -5,3 +5,7 @@
     height: calc(100vh - 72.8px);
     margin-top: 72.8px;
 }
+
+#home h1 {
+    visibility: hidden;
+}

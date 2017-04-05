@@ -1,17 +1,38 @@
 form {
     font-size: 1.5em;
+    margin-bottom: 50px;
 }
 
-.form-input {
+form button[type="submit"] {
+    margin: 0 auto;
+    display: block;
+}
+
+form label {
+    width: 150px;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.form-input,
+.form-radio {
     margin: 15px;
+}
+
+.form-radio label {
+    width: initial;
+}
+
+.form-radio input {
+    margin-right: 20px;
 }
 
 .form-input input,
 .form-input textarea {
     border-radius: 8px;
-    border: 2px solid #ddc;
-    font-size: 0.7em;
-    padding: 5px;
+    border: 2px solid #ccc;
+    font-size: 0.9em;
+    padding: 10px;
 }
 
 .form-input input:focus,
@@ -19,7 +40,7 @@ form {
 .form-input input:invalid:focus,
 .form-input textarea:invalid:focus {
     outline: none;
-    border-color: #aaa;
+    border-color: #999;
 }
 
 .form-input input:invalid,
@@ -30,4 +51,33 @@ form {
 .form-input input:valid,
 .form-input textarea:valid {
     border-color: green;
+}
+
+.button {
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid #ddd;
+    padding: 10px 15px;
+    color: black;
+    border-radius: 5px;
+}
+
+.button:hover,
+.button:focus {
+    border-color: #ccc;
+    outline: none;
+}
+
+.button:active {
+    color: white;
+    background-color: #999;
+}
+
+.button:disabled {
+    cursor: default;
+    color: #ddd;
+}
+
+.button:hover:disabled {
+    border-color: #ddd;
 }
