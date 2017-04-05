@@ -14,10 +14,12 @@
     <meta name="description" content="babel example project">
     <meta name="keywords" content="babel, example, html5, css3, js">
     <title>The Avengers</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Oswald:200,300,400,500,600,700" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/form.css">
 </head>
 
 <body>
@@ -100,19 +102,30 @@
         <section id="contact">
             <header>
                 <h2>Contact</h2></header>
-            <form action="//backend.com/contact" novalidate>
-                <label for="name">Full name</label>
-                <input type="text" name="name" id="name" placeholder="Tell us your name" required>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Tell us your email" required pattern="[a-zA-Z0-9_\.\+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-\.]+">
-                <label for="male">Male</label>
-                <input type="radio" name="gender" id="male" value="male">
-                <label for="female">Female</label>
-                <input type="radio" name="gender" id="female" value="female">
-                <label for="birthdate">Birthdate</label>
-                <input type="date" name="birthdate" id="birthdate">
-                <label for="message">Message</label>
-                <textarea id="message" cols="30" rows="10" placeholder="What do you need?"></textarea>
+            <form action="//backend.com/contact">
+                <!-- Añadir novalidate-->
+                <div class="form-input">
+                    <label for="name">Full name</label>
+                    <input type="text" name="name" id="name" placeholder="Tell us your name" required>
+                </div>
+                <div class="form-input">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Tell us your email" required pattern="[a-zA-Z0-9_\.\+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-\.]+">
+                </div>
+                <div class="form-input">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="female" value="female">
+                </div>
+                <div class="form-input">
+                    <label for="birthdate">Birthdate</label>
+                    <input type="date" name="birthdate" id="birthdate" required>
+                </div>
+                <div class="form-input">
+                    <label for="message">Message</label>
+                    <textarea id="message" cols="30" rows="10" placeholder="What do you need?" required></textarea>
+                </div>
                 <button type="submit">Send</button>
             </form>
         </section>
