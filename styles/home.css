@@ -4,6 +4,7 @@
     color: white;
     height: calc(100vh - 72.8px);
     margin-top: 72.8px;
+    background-size: cover;
 }
 
 #home h1 {
