@@ -1,8 +1,8 @@
 'use strict';
 
 //Inmediated invoked function
-
-(function() {
+//(function() {
+$(document).ready(function() {
     document.querySelector('#team .caption').addEventListener('click',
         function() {
             console.log(this);

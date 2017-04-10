@@ -152,7 +152,7 @@
                 <h2>Contact</h2>
             </header>
             <div class="row">
-                <form action="//backend.com/contact" class="col-offset-2 col-8">
+                <form action="" class="col-offset-2 col-8" novalidate>
                     <!-- Añadir novalidate-->
                     <div class="form-input">
                         <label for="name">Full name</label>
@@ -164,9 +164,9 @@
                     </div>
                     <div class="form-radio">
                         <label for="male">Male</label>
-                        <input type="radio" name="gender" id="male" value="male">
+                        <input type="radio" name="gender" id="male" value="male" required>
                         <label for="female">Female</label>
-                        <input type="radio" name="gender" id="female" value="female">
+                        <input type="radio" name="gender" id="female" value="female" required>
                     </div>
                     <div class="form-input">
                         <label for="birthdate">Birthdate</label>
@@ -199,9 +199,13 @@
             </p>
         </div>
     </footer>
-    <!-- <script src="scripts/main.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <!--<script src="scripts/main.js"></script>-->
+    <script src="scripts/services.posts.js"></script>
+    <script src="scripts/services.photos.js"></script>
     <script src="scripts/contact.js"></script>
     <script src="scripts/team.js"></script>
+    <script src="scripts/movies.js"></script>
 </body>
 
 </html>
