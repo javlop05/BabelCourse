@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="styles/resume.css">
     <link rel="stylesheet" href="styles/skills.css">
     <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/footer.css">
 </head>
 
 <body>
@@ -161,7 +162,7 @@
                             <input type="date" name="birthdate" id="birthdate" required>
                         </div>
                         <div class="form-input">
-                            <label for="telephone"></label>
+                            <label for="telephone">Telephone</label>
                             <span id="prefixNumber"></span>
                             <input type="tel" name="telephone" id="telephone" required>
                         </div>
@@ -178,8 +179,8 @@
                         <button type="submit" class="button">Send</button>
                     </div>
                     <div class="col-offset-2 col-4">
-                        <img src="" id="country">
                         <label for="country">Country</label>
+                        <img src="" id="countryImg">
                         <select name="country" id="country">
                             <option value="0" label="Select a country … " selected="selected">Select a country … </option>
                             <optgroup id="country-optgroup-Africa" label="Africa">
@@ -452,10 +453,18 @@
             </div>
         </section>
     </main>
-    <footer>
+    <footer class="container-fluid">
+        <div class="row">
+            <p class="col-offset-4 col-4">
+                Javier López de Lerma
+                <time datetime="2017-04-04">2017</time>
+            </p>
+        </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="scripts/nav.js"></script>
+    <script src="scripts/service.countries.js"></script>
+    <script src="scripts/contact.js"></script>
 </body>
 
 </html>

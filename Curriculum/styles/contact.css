@@ -1,6 +1,7 @@
 #contact {
     background-color: rgba(43, 43, 43, 0.8);
     color: white;
+    border-radius: 20px;
 }
 
 #contact .form-input {
@@ -17,4 +18,8 @@
     margin: 10px 10px 10px 0px;
     border-radius: 10px;
     float: right;
+}
+
+#contact span {
+    font-size: 20px;
 }

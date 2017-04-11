@@ -5,7 +5,7 @@
     position: fixed;
     font-size: 1.1em;
     background-color: rgb(0, 0, 0);
-    width: 100vw;
+    width: 100%;
     top: 0;
     z-index: 100;
 }
