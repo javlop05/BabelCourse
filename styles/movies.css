@@ -17,7 +17,7 @@
     width: 85%;
     height: 500px;
     /*object-fit: contain;*/
-    /*object-fit: cover;*/
+    object-fit: cover;
     transition: box-shadow 0.3s, transform 0.3s;
 }
 

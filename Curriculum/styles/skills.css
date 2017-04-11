@@ -1,5 +1,10 @@
 #skills {
-    background-color: #EEE;
+    background-color: rgba(238, 238, 238, 0.6);
+    border-radius: 20px;
+}
+
+#skills h4 {
+    text-decoration: underline;
 }
 
 #skills ul {
@@ -19,4 +24,6 @@
 
 #skills ul li img {
     width: 100px;
+    height: 100px;
+    object-fit: contain;
 }

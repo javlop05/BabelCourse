@@ -1,1 +1,20 @@
+#contact {
+    background-color: rgba(43, 43, 43, 0.8);
+    color: white;
+}
 
+#contact .form-input {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#contact button {
+    cursor: pointer;
+    background-color: #F06000;
+    color: white;
+    padding: 10px 40px;
+    margin: 10px 10px 10px 0px;
+    border-radius: 10px;
+    float: right;
+}
