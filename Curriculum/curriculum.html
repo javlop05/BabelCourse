@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <nav class="nav">
+    <nav class="nav" id="mainNav">
         <ul class="nav-items">
             <li class="nav-item  nav-item--active">
                 <a href="#home">home</a></li>
@@ -45,7 +45,7 @@
     <header id="home">
         <h1>Hi, I'm Javier López</h1>
         <h3>Front end developer</h3>
-        <img class="profile" src="assets/img/calendario2017-portatil_Espana.jpg" alt="My profile photo">
+        <img class="profile" src="assets/img/profile.jpg" alt="My profile photo">
         <ul>
             <li>
                 <a href=""><img class="icon" src="assets/icons/facebook.png" alt="facebook"></a>
@@ -74,25 +74,69 @@
             </header>
             <div class="row">
                 <div class="col-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem aliquid odit beatae esse tempora placeat delectus quo iste ad, sapiente quaerat a dignissimos nisi? Eius illum iste dolores debitis, aspernatur minima maxime. Dignissimos, aperiam. Ipsum voluptatum, cum nemo, consequuntur earum consectetur eius officia hic eaque ad facilis, delectus voluptas vero optio error natus repudiandae. Inventore eveniet vero accusantium debitis quo perferendis illum cupiditate rerum earum voluptatum voluptate dolore minus, beatae minima, labore libero quaerat, sint commodi fugit fuga. Pariatur aut tenetur consequuntur at voluptatibus alias laudantium quas consectetur ab amet? Deserunt qui inventore, commodi! Provident expedita, distinctio doloremque asperiores aspernatur?</p>
+                    <ul>
+                        <li> Winner of Telefónica Chair prize for developing a game on Unity aimed at stimulating cognitive abilities of elderly people. On this project we are learning the developing cycle process of videogames as well as working together as a team, since our group consist of two psychologists, two artists and three programmers.</li>
+                        <li>Development of a poker game/framework with Eclipse next to three companions that allows to integrate artificial intelligence within the game</li>
+                        <li>Development of a classic RPG web game with Spring MVC, using html, css, java, javascript, Ajax, json and hibernate </li>
+                        <li>Experience in the development of games in a short time thanks to my participation in a Hackathon organized by BNE. </li>
+                        <li>Winner of a first prize at HackForGood 2017 for developing the best application related to education for a society and open culture</li>
+                        <li>At the moment working in babel as a web developer</li>
+                    </ul>
                 </div>
                 <div class="col-6">
-                    <img class="profile" src="assets/img/calendario2017-portatil_Espana.jpg">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6 col-offset-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, a vitae, voluptate velit consequatur rem accusamus rerum. Iure, quibusdam, veniam!</p>
+                    <div class="row">
+                        <img class="profile" src="assets/img/profile.jpg">
+                    </div>
+                    <div class="row information">
+                        <ul>
+                            <li>
+                                <img src="assets/icons/user.png" alt="">
+                                <p>Javier López de Lerma</p>
+                            </li>
+                            <li>
+                                <img src="assets/icons/birthday-cake.png" alt="">
+                                <p>16th June 1995</p>
+                            </li>
+                            <li>
+                                <img src="assets/icons/smartphone.png" alt="">
+                                <p>685 64 67 64 </p>
+                            </li>
+                            <li>
+                                <img src="assets/icons/email.png" alt="">
+                                <a href="mailto:javilopezdelerma84@gmail.com?subject=The%20subject%20of%20the%20mail">javilopezdelerma84@gmail.com</a>
+                            </li>
+                            <li>
+                                <img src="assets/icons/github.png" alt="">
+                                <a href="https://github.com/javlop05">https://github.com/javlop05</a>
+                            </li>
+                            <li>
+                                <img src="assets/icons/house.png" alt="">
+                                <p>Minerva 86 1ºA 28032 Madrid (Spain)</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
-        <section id="resume">
+        <section id="resume" class="container">
             <header>
                 <h2>Resume</h2>
                 <h4>Check some of my works</h4>
             </header>
-            <ul id="myWorks">
-            </ul>
+            <div class="gallery">
+                <button id="prev">Last works</button>
+                <ul id="myWorks">
+                    <li><img src="assets/img/calendario2017-portatil_Espana.jpg" alt=""></li>
+                    <li><img src="assets/img/calendario2017-portatil_Espana.jpg" alt=""></li>
+                    <li><img src="assets/img/calendario2017-portatil_Espana.jpg" alt=""></li>
+                    <li><img src="assets/img/calendario2017-portatil_Espana.jpg" alt=""></li>
+                    <li><img src="assets/img/calendario2017-portatil_Espana.jpg" alt=""></li>
+                    <li><img src="assets/img/calendario2017-portatil_Espana.jpg" alt=""></li>
+                    <li><img src="assets/img/calendario2017-portatil_Espana.jpg" alt=""></li>
+                    <li> <img src="assets/img/calendario2017-portatil_Espana.jpg" alt=""></li>
+                </ul>
+                <button id="next">Old works</button>
+            </div>
         </section>
         <section id="skills" class="container">
             <header>
@@ -102,18 +146,30 @@
                 <div class="col-offset-2 col-8">
                     <h4> Programming </h4>
                     <ul>
-                        <li><img src="assets/icons/HTML5.png" alt="html5"></li>
-                        <li><img src="assets/icons/css3.png" alt="css3"></li>
-                        <li><img src="assets/icons/JSLogo.png" alt="javascript"></li>
-                        <li><img src="assets/icons/unity-logo.png" alt="unity"></li>
-                        <li><img src="assets/icons/original.png" alt="java"></li>
-                        <li><img src="assets/icons/c++.png" alt="c++"></li>
-                        <li><img src="assets/icons/HTML5.png" alt="html5"></li>
-                        <li><img src="assets/icons/css3.png" alt="css3"></li>
-                        <li><img src="assets/icons/JSLogo.png" alt="javascript"></li>
-                        <li><img src="assets/icons/unity-logo.png" alt="unity"></li>
-                        <li><img src="assets/icons/original.png" alt="java"></li>
-                        <li><img src="assets/icons/c++.png" alt="c++"></li>
+                        <li>
+                            <img src="assets/icons/HTML5.png" alt="html5">
+                            <progress class="caption" value="70" max="100">70%</progress>
+                        </li>
+                        <li>
+                            <img src="assets/icons/css3.png" alt="css3">
+                            <progress class="caption" value="70" max="100">70%</progress>
+                        </li>
+                        <li>
+                            <img src="assets/icons/JSLogo.png" alt="javascript">
+                            <progress class="caption" value="70" max="100">70%</progress>
+                        </li>
+                        <li>
+                            <img src="assets/icons/unity-logo.png" alt="unity">
+                            <progress class="caption" value="60" max="100">70%</progress>
+                        </li>
+                        <li>
+                            <img src="assets/icons/original.png" alt="java">
+                            <progress class="caption" value="80" max="100">70%</progress>
+                        </li>
+                        <li>
+                            <img src="assets/icons/c++.png" alt="c++">
+                            <progress class="caption" value="60" max="100">70%</progress>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -121,23 +177,14 @@
                 <div class="col-offset-1 col-4">
                     <h4>Languages</h4>
                     <ul>
-                        <li><img src="assets/icons/HTML5.png" alt="html5"></li>
-                        <li><img src="assets/icons/css3.png" alt="css3"></li>
-                        <li><img src="assets/icons/JSLogo.png" alt="javascript"></li>
-                        <li><img src="assets/icons/unity-logo.png" alt="unity"></li>
-                        <li><img src="assets/icons/original.png" alt="java"></li>
-                        <li><img src="assets/icons/c++.png" alt="c++"></li>
+                        <li><img src="assets/icons/spanish.png" alt="spanish"></li>
+                        <li><img src="assets/icons/english.png" alt="english"></li>
                     </ul>
                 </div>
                 <div class="col-offset-2 col-4">
                     <h4>Others</h4>
                     <ul>
-                        <li><img src="assets/icons/HTML5.png" alt="html5"></li>
-                        <li><img src="assets/icons/css3.png" alt="css3"></li>
-                        <li><img src="assets/icons/JSLogo.png" alt="javascript"></li>
-                        <li><img src="assets/icons/unity-logo.png" alt="unity"></li>
-                        <li><img src="assets/icons/original.png" alt="java"></li>
-                        <li><img src="assets/icons/c++.png" alt="c++"></li>
+                        <li><img src="assets/icons/driver.png" alt="driver"></li>
                     </ul>
                 </div>
             </div>
@@ -147,7 +194,7 @@
                 <h2>Contact</h2>
             </header>
             <div class="row">
-                <form action="">
+                <form action="" novalidate>
                     <div class="col-offset-1 col-4">
                         <div class="form-input">
                             <label for="name">Name</label>
@@ -159,30 +206,30 @@
                         </div>
                         <div class="form-input">
                             <label for="birthdate">Birthdate</label>
-                            <input type="date" name="birthdate" id="birthdate" required>
+                            <input type="date" name="birthdate" id="birthdate">
                         </div>
                         <div class="form-input">
                             <label for="telephone">Telephone</label>
                             <span id="prefixNumber"></span>
-                            <input type="tel" name="telephone" id="telephone" required>
+                            <input type="tel" name="telephone" id="telephone" placeholder="Tell me you telephone" required>
                         </div>
                         <div class="form-input">
                             <label for="male">Male</label>
-                            <input type="radio" name="gender" id="male" value="male" required>
+                            <input type="radio" name="gender" id="male" value="male">
                             <label for="female">Female</label>
-                            <input type="radio" name="gender" id="female" value="female" required>
+                            <input type="radio" name="gender" id="female" value="female">
                         </div>
-                        <div class="form-input">
+                        <div class="form-input area">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" cols="30" rows="10" placeholder="What do you need?" required></textarea>
                         </div>
                         <button type="submit" class="button">Send</button>
                     </div>
-                    <div class="col-offset-2 col-4">
+                    <div class="col-offset-2 col-4 form-select">
                         <label for="country">Country</label>
                         <img src="" id="countryImg">
-                        <select name="country" id="country">
-                            <option value="0" label="Select a country … " selected="selected">Select a country … </option>
+                        <select name="country" id="country" required>
+                            <option value="" label="Select a country … " selected="selected">Select a country … </option>
                             <optgroup id="country-optgroup-Africa" label="Africa">
                                 <option value="DZ" label="Algeria">Algeria</option>
                                 <option value="AO" label="Angola">Angola</option>
@@ -447,9 +494,10 @@
                                 <option value="WF" label="Wallis and Futuna">Wallis and Futuna</option>
                             </optgroup>
                         </select>
+                        <div id="errorContact">
+                        </div>
                     </div>
-            </div>
-            </form>
+                </form>
             </div>
         </section>
     </main>

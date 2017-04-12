@@ -10,4 +10,18 @@ $(document).ready(function() {
         }, 1000);
     });
 
+    var active = document.querySelectorAll('a[href*="#"]')[0]; /*= ('#mainNav:first-child:first-child:first-child');*/
+
+    document.querySelectorAll('a[href*="#"]').forEach(function(elem) {
+        elem.addEventListener('click', function() {
+            console.log(active);
+            if (active) {
+                $(active).parent().removeClass('nav-item--active');
+            }
+
+            $(this).parent().addClass('nav-item--active');
+            active = this;
+        });
+    });
+
 });

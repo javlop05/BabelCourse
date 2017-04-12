@@ -10,6 +10,22 @@
     padding: 10px;
 }
 
+#contact .form-input.area {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact .form-input.area textarea {
+    margin-top: 10px;
+}
+
+.form-input input,
+.form-input.area textarea,
+.form-select select {
+    transition: border-color 0.3s;
+    border-radius: 5px;
+}
+
 #contact button {
     cursor: pointer;
     background-color: #F06000;
@@ -22,4 +38,53 @@
 
 #contact span {
     font-size: 20px;
+}
+
+#contact .form-input input:focus,
+#contact .form-input textarea:focus,
+#contact .form-select select:focus,
+#contact .form-input input:invalid:focus,
+#contact .form-input textarea:invalid:focus,
+#contact .form-select select:invalid:focus {
+    outline: none;
+    border-color: #999;
+}
+
+#contact .form-input input:invalid,
+#contact .form-input textarea:invalid,
+#contact .form-select select:invalid {
+    border-color: red;
+}
+
+#contact .form-input input:valid,
+#contact .form-input textarea:valid,
+#contact .form-select select:valid {
+    border-color: green;
+}
+
+.button {
+    transition: border-color 0.2s ease-in-out, transform 0.3s ease-in-out;
+    will-change: border-color, transform;
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid #ddd;
+    padding: 10px 15px;
+    color: black;
+    border-radius: 5px;
+}
+
+.button:hover {
+    transform: scale(1.2);
+}
+
+.button:hover,
+.button:focus {
+    border-color: #ccc;
+    outline: none;
+}
+
+.button:active {
+    transform: scale(0.8);
+    color: white;
+    background-color: #999;
 }
