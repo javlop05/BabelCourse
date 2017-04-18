@@ -1,0 +1,35 @@
+#resume {
+    background: rgba(238, 238, 238, 0.6);
+    border-radius: 20px;
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+#resume .gallery {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+#resume .gallery ul {
+    padding: 0;
+    width: 70%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+#resume .gallery ul li {
+    width: 22%;
+}
+
+#resume .gallery ul li img {
+    padding: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    object-fit: contain;
+}

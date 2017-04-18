@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    font-family: Lato, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Anton, Helvetica, sans-serif;
+    /*text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;*/
+}
+
+h1 {
+    font-size: 35px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+section {
+    padding-top: 72.73px;
+}

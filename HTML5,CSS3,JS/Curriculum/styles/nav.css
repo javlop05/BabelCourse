@@ -1,0 +1,38 @@
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    font-size: 1.1em;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.nav .nav-items {
+    margin: 0;
+    padding: 0;
+}
+
+.nav .nav-item {
+    display: inline-block;
+    list-style: none;
+}
+
+.nav .nav-item > a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    line-height: 3em;
+    transition: background-color 0.2s, color 0.3s;
+    will-change: background-color, color;
+}
+
+.nav .nav-item.nav-item--active > a,
+.nav .nav-item > a:hover {
+    color: #F06000;
+    background-color: white;
+}
