@@ -1,31 +1,48 @@
 'use strict';
 
 const fs = require('fs');
-const path = require('path');
+const async = require('async');
 
-//funcion que lee la version del modulo
-function versionModulo(nombreModulo, callback) {
-    const fichero = path.join('./node_modules', nombreModulo, 'package.json');
+//require usa una ruta relativa a este fichero
+const versionModulo = require('./versionModulo');
 
-    fs.readFile(fichero, 'utf-8', function(err, datos) {
+function versionModulos(callback) {
+
+    //Esta ruta es relativa a la raiz del proyecto
+    fs.readdir('./node_modules', function(err, lista) {
         if (err) {
-            callback(err); //Llamamos al callback con el error
+            callback(err);
             return;
         }
 
-        const packageJson = JSON.parse(datos);
+        //Para cada string de la lista ejecutamos versionModulo
+        //concat recibe un array, la funcion a ejecutar con cada elemento
+        //y un callback final
+        async.concat(lista,
+            function iterador(elemento, callbackIterador) {
+                if (elemento === '.bin') {
+                    callbackIterador(null);
+                    return;
+                }
+                versionModulo(elemento, function(err, version) {
+                    if (err) {
+                        callbackIterador(err);
+                        return;
+                    }
 
-        //Llamamos al callback con el dato que nos pidieron
-        callback(null, packageJson.version);
+                    callbackIterador(null, { version, modulo: elemento });
+                });
+            },
+            callback);
     });
 }
 
-// Llamamos a la funcion
-versionModulo('chance', function(err, version) {
+
+versionModulos(function(err, datos) {
     if (err) {
-        console.log('Error!', err);
+        console.log('Hubo un error', err);
         return;
     }
 
-    console.log('La version de chance es: ', version);
+    console.log('Los modulos son', datos);
 });

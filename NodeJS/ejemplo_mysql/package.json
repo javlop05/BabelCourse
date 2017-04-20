@@ -1,5 +1,5 @@
 {
-  "name": "version_modulo",
+  "name": "ejemplo_mysql",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "async": "^2.3.0",
-    "chance": "^1.0.6"
+    "mysql": "^2.13.0"
   }
 }
