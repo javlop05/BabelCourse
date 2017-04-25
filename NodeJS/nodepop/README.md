@@ -91,7 +91,7 @@ Example
 GET      apiv1/anuncios 
 ```
 
-###Getting the products filtering by name
+### Getting the products filtering by name
 The next request will return products which start with [name]
 ```
 GET      apiv1/anuncios?nombre=ip  

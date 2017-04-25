@@ -4,7 +4,11 @@ const mongoose = require('mongoose');
 
 const usuarioSchema = mongoose.Schema({
     nombre: String,
-    email: String,
+    email: {
+        type: String,
+        unique: true,
+        index: true
+    },
     clave: String 
 });
 

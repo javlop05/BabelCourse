@@ -1,11 +1,17 @@
-var express = require('express');
-var router = express.Router();
+'use strict';
+
+const express = require('express');
+const router = express.Router();
 
 const mongoose = require('mongoose');
 const Anuncio = mongoose.model('Anuncio');
+const jwtAuth = require('../../lib/jwtAuth');
+
+// JSON Web Token
+router.use(jwtAuth);
 
 /* GET /apiv1/anuncios . */
-router.get('/', function (req, res, next) {
+router.get('/', (req, res, next) => {
 
     const tags = req.query.tags;
     const venta = req.query.venta;
