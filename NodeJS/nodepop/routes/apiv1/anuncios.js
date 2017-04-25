@@ -7,36 +7,15 @@ const Anuncio = mongoose.model('Anuncio');
 /* GET /apiv1/anuncios . */
 router.get('/', function (req, res, next) {
 
-    const tag = req.query.tag;
+    const tags = req.query.tags;
     const venta = req.query.venta;
     const nombre = req.query.nombre;
     const precio = req.query.precio;
     const start = parseInt(req.query.start);
     const limit = parseInt(req.query.limit);
-    const sort = parseInt(req.query.sort);
-    //const select = req.query.select;
+    const sort = req.query.sort;
 
-    const conditions = {};
-    
-    if (tag) conditions.tag = tag;
-    if (venta) conditions.venta = venta;
-    if (nombre) conditions.nombre = nombre;
-    if (precio) {
-        let condArray = precio.split("-");
-        if (condArray.length > 2) {
-            let error = new Error('Error en el rango del precio solicitado');
-            next(err);
-            return;
-        } else if (condArray.length > 1) {
-            const precioCond = {};
-            if (condArray[0]) precioCond.$gte = parseInt(condArray[0]);
-            if (condArray[1]) precioCond.$lte = parseInt(condArray[1]);
-            conditions.precio = precioCond;
-        } else {
-            conditions.precio = parseInt(precio);
-        }
-        console.log(conditions.precio);
-    }
+    const conditions = createCondition(tags, venta, nombre, precio, start, limit, sort);
 
     Anuncio.list(conditions, limit, start, sort, (err, anuncios) => {
         if (err) {
@@ -46,5 +25,47 @@ router.get('/', function (req, res, next) {
         res.json({ success: true, result: anuncios });
     });
 });
+
+// Funcion que crea la condicion de busqueda
+function createCondition(tags, venta, nombre, precio, start, limit, sort) {
+    const conditions = {};
+    
+    if (tags) {
+        const condTagArray = tags.split(',');
+        const inCond = {};
+        inCond.$in = condTagArray;
+        conditions.tags = inCond;
+    }
+
+
+    if (venta) conditions.venta = venta;
+
+
+    if (nombre) {
+        const nameExp = new RegExp('^' + nombre, "i");
+        const regCond = {};
+        regCond.$regex = nameExp;
+        conditions.nombre = regCond;
+    }
+
+
+    if (precio) {
+        const condPrecioArray = precio.split("-");
+        if (condPrecioArray.length > 2) {
+            const error = new Error('Error en el rango del precio solicitado');
+            next(err);
+            return;
+        } else if (condPrecioArray.length > 1) {
+            const precioCond = {};
+            if (condPrecioArray[0]) precioCond.$gte = parseInt(condPrecioArray[0]);
+            if (condPrecioArray[1]) precioCond.$lte = parseInt(condPrecioArray[1]);
+            conditions.precio = precioCond;
+        } else {
+            conditions.precio = parseInt(precio);
+        }
+    }
+
+    return conditions;
+}
 
 module.exports = router;
