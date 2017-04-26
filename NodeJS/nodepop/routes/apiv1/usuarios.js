@@ -17,7 +17,9 @@ router.post('/login', (req, res, next) => {
   const clave = req.body.clave;
 
   if (!email || !clave) {
-    res.json({ success: false, error: 'Debes rellenar los campos de login' });
+    const err = new Error('Debes rellenar los campos de login');
+    next(err);
+    return;
   }
 
   Usuario.findOne({ email }).exec((err, userFound) => {
@@ -30,28 +32,27 @@ router.post('/login', (req, res, next) => {
     }
 
     if (!userFound) {
-      console.log('Usuario no encontrado');
-      res.json({ success: false, error: 'Datos incorrectos' });
+      const err = new Error('Datos incorrectos');
+      next(err);
+      return;
     }
 
     bcrypt.compare(clave, userFound.clave)
-      .then(res => {
+      .then(iguales => {
 
-        if (!res) {
-          console.log('La clave no coincide');
-          res.json({ success: false, error: 'Datos incorrectos' });
+        if (!iguales) {
+          const err = new Error('Datos incorrectos');
+          next(err);
+          return;
         }
 
         jwt.sign({ usuario_id: userFound._id }, config.jwtSecret, config.jwtConfig,
           (err, token) => {
-            console.log(err);
             if (err) {
               next(err);
               return;
             }
-            console.log('ey');
             res.json({ success: true, token });
-            console.log('hola');
           });
       });
   });
