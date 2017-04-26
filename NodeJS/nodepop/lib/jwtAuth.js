@@ -14,7 +14,7 @@ module.exports = (req, res, next) => {
         return;
     }
 
-    jwt.verify(token, configJWT.secret, function(err, tokenDecoded) {
+    jwt.verify(token, config.jwtSecret, function(err, tokenDecoded) {
         if (err) {
             const error = new Error('El token no es valido');
             error.status = 401;
@@ -25,4 +25,4 @@ module.exports = (req, res, next) => {
         req.usuario_id = tokenDecoded.usuario_id;
         next();
     });
-}
+};

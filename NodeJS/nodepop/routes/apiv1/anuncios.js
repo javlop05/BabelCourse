@@ -21,7 +21,8 @@ router.get('/', (req, res, next) => {
     const limit = parseInt(req.query.limit);
     const sort = req.query.sort;
 
-    const conditions = createCondition(tags, venta, nombre, precio, start, limit, sort);
+    //Posible error si en el precio 
+    const conditions = createCondition(tags, venta, nombre, precio);
 
     Anuncio.list(conditions, limit, start, sort, (err, anuncios) => {
         if (err) {
@@ -33,7 +34,7 @@ router.get('/', (req, res, next) => {
 });
 
 // Funcion que crea la condicion de busqueda
-function createCondition(tags, venta, nombre, precio, start, limit, sort) {
+function createCondition(tags, venta, nombre, precio) {
     const conditions = {};
     
     if (tags) {
@@ -48,7 +49,7 @@ function createCondition(tags, venta, nombre, precio, start, limit, sort) {
 
 
     if (nombre) {
-        const nameExp = new RegExp('^' + nombre, "i");
+        const nameExp = new RegExp('^' + nombre, 'i');
         const regCond = {};
         regCond.$regex = nameExp;
         conditions.nombre = regCond;
@@ -56,12 +57,8 @@ function createCondition(tags, venta, nombre, precio, start, limit, sort) {
 
 
     if (precio) {
-        const condPrecioArray = precio.split("-");
-        if (condPrecioArray.length > 2) {
-            const error = new Error('Error en el rango del precio solicitado');
-            next(err);
-            return;
-        } else if (condPrecioArray.length > 1) {
+        const condPrecioArray = precio.split('-');
+        if (condPrecioArray.length > 1) {
             const precioCond = {};
             if (condPrecioArray[0]) precioCond.$gte = parseInt(condPrecioArray[0]);
             if (condPrecioArray[1]) precioCond.$lte = parseInt(condPrecioArray[1]);

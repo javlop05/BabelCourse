@@ -4,17 +4,18 @@
 * [Data base initialization](#data-base-initialization)
 * [Run application](#run-application)
 * [Registry](#registry)
+* [Login](#login)
 * [Authentication](#authentication)
 * [Data base info](#data-base-information)
   * [Users](#users)
-  * [Notices](#notices)
+  * [Advertisement](#advertisement)
 * [Error handling](#error-handling)
 * [Request & Response Examples](#request--response-examples)
 
 
 ## Description
 
-API with users and notices
+API with users and advertisement
 
 ## Data base initialization
 
@@ -43,7 +44,35 @@ or
 
 ## Registry
 
+You must be registered if you want to have access to all the products
+
+```
+POST      apiv1/usuarios/registro
+```
+
+!Important: all the fields are required, so you must fill them to sign up (this fields which you have to give us in the body are: email, clave and name). You can't use an email which already exists in our database
+
+
+## Login
+
+Once you are sign up in the API, you must login to have the access to our database. You have to give us the email and password which you used to sign up in our API doing the next request
+
+```
+POST      apiv1/usuarios/login
+```
+
+This request will give you the token for the authentication (see next section) that is needed to have the access to the database
+
 ## Authentication
+
+Via JSON Web Token
+
+In all the request, you must give us the token that login gave you, you can send it via:
+
+* req.body.token
+* req.query.token
+* req.headers['x-access-token']
+
 
 ## Data base information
 ### Users
@@ -62,9 +91,9 @@ Example
   }
 ```
 
-### Notices
+### Advertisement (product)
 
-Notices information:
+Advertisement information:
 * Name
 * Selling (sells or buys)
 * Prize (€)
@@ -85,6 +114,8 @@ Example
 ## Error handling
 
 ## Request & Response Examples
+
+!Important: token is required for all the request [(see login section)](#login)
 
 ### Getting all the products
 ``` 
@@ -153,6 +184,5 @@ GET      apiv1/anuncios?sort=precio tag
 ```
 GET      apiv1/anuncios?​tag​=mobile&​venta​=false&​nombre​=ip&​precio​=50-&start​=0&​limit​=2&​sort​=precio&​includeTotal​=true
 ```
-
 
 © 2017 Javier López de Lerma

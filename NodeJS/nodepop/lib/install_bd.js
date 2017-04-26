@@ -18,7 +18,7 @@ const Anuncio = mongoose.model('Anuncio');
 
 //Eliminamos los docs
 function eliminarUsuarios() {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
         Usuario.remove(err => {
             if (err) reject(err);
             console.log('Usuarios eliminados correctamente');
@@ -28,7 +28,7 @@ function eliminarUsuarios() {
 }
 
 function eliminarAnuncios() {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
         Anuncio.remove(err => {
             if (err) reject(err);
             console.log('Anuncios eliminados correctamente');
@@ -46,18 +46,18 @@ function cargarDatos() {
 
         fs.readFile('./lib/anuncios.json', (err, data) => {
 
-            if (err) reject(err); 
+            if (err) reject(err);
 
             const anuncios = (JSON.parse(data)).anuncios;
 
             for (let i = 0; i < anuncios.length; i++) {
                 let anuncio = new Anuncio(anuncios[i]);
-                anuncio.save(function (err, anuncioCreado) { 
+                anuncio.save((err, anuncioCreado) => { 
                     if (err) {
                         console.log('Error:', err);
                         reject(err);
                     }
-                    console.log('Anuncio ' + anuncio.nombre + ' creado');
+                    console.log('Anuncio ' + anuncioCreado.nombre + ' creado');
                 });
             }
 

@@ -1,6 +1,7 @@
+'use strict';
+
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -31,6 +32,7 @@ app.use(function(req, res, next) {
 app.use('/', require('./routes/index'));
 app.use('/apiv1/anuncios', require('./routes/apiv1/anuncios'));
 app.use('/apiv1/usuarios', require('./routes/apiv1/usuarios'));
+app.use('/images/anuncios', require('./routes/apiv1/imagenes'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -40,7 +42,7 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

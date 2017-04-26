@@ -3,18 +3,34 @@
 const mongoose = require('mongoose');
 
 const anuncioSchema = mongoose.Schema({
-    nombre: String,
-    venta: Boolean, 
-    precio: Number,
+    nombre: {
+        type: String,
+        required: true,
+        index: true
+    },
+    venta: {
+        type: Boolean, 
+        required: true,
+        index: true
+    },
+    precio: {
+        type: Number,
+        required: true,
+        index: true
+    },
     foto: String,
-    tags: [String] 
+    tags: {
+        type: [String], 
+        enum: ['work', 'lifestyle', 'motor', 'mobile'],
+        index: true
+    }
 });
 
 anuncioSchema.statics.list = function(conditions, limit, skip, sort, callback) {
     const query = Anuncio.find(conditions);
 
     // Limite de los resultados devueltos
-    query.limit(limit)
+    query.limit(limit);
 
     // Nos saltamos los primos skip resultados
     query.skip(skip);
@@ -24,6 +40,6 @@ anuncioSchema.statics.list = function(conditions, limit, skip, sort, callback) {
 
     // Ejecuto la query
     query.exec(callback);
-}
+};
 
 var Anuncio = mongoose.model('Anuncio', anuncioSchema);
