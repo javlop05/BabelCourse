@@ -26,7 +26,7 @@ const anuncioSchema = mongoose.Schema({
     }
 });
 
-anuncioSchema.statics.list = function(conditions, limit, skip, sort, callback) {
+anuncioSchema.statics.list = function(conditions, limit, skip, sort, select, callback) {
     const query = Anuncio.find(conditions);
 
     // Limite de los resultados devueltos
@@ -34,6 +34,9 @@ anuncioSchema.statics.list = function(conditions, limit, skip, sort, callback) {
 
     // Nos saltamos los primos skip resultados
     query.skip(skip);
+
+    //Devolvemos solos los campos solicitados
+    query.select(select);
 
     // Ordenamos por los campos dados
     query.sort(sort);

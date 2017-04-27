@@ -75,6 +75,10 @@ router.post('/registro', (req, res, next) => {
           res.json({ success: true, user });
         }
       });
+    })
+    .catch(err => {
+      next(err);
+      return;
     });
 });
 

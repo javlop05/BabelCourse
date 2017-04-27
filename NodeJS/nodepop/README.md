@@ -137,6 +137,11 @@ You can concatenate more than 1 tag with ','
 GET      apiv1/anuncios?tags=mobile,motor
 ```
 
+### Getting all the existing tags
+```
+GET      apiv1/anuncios/tags
+```
+
 ### Getting the products which users sell(true) or search(false)
 ```
 GET      apiv1/anuncios?venta=true
@@ -178,6 +183,12 @@ GET      apiv1/anuncios?limit=5
 The next request will sort the returning products by [sortField]. Note: you can concatenate more than 1 sort field with space blanks
 ```
 GET      apiv1/anuncios?sort=precio tag
+```
+
+### Using select
+The next request will return the [fields] of the products. Note: you can concatenate more than 1 select field with space blanks
+```
+GET     apiv1/anuncios?select=nombre precio
 ```
 
 ### Full example

@@ -20,17 +20,37 @@ router.get('/', (req, res, next) => {
     const start = parseInt(req.query.start);
     const limit = parseInt(req.query.limit);
     const sort = req.query.sort;
+    const select = req.query.select;
 
     //Posible error si en el precio 
     const conditions = createCondition(tags, venta, nombre, precio);
 
-    Anuncio.list(conditions, limit, start, sort, (err, anuncios) => {
+    Anuncio.list(conditions, limit, start, sort, select, (err, anuncios) => {
         if (err) {
             next(err);
             return;
         }
         res.json({ success: true, result: anuncios });
     });
+});
+
+
+/* GET /apiv1/anuncios/tags */
+router.get('/tags', (req, res, next) => {
+    Anuncio.aggregate(
+        [
+         { $unwind : '$tags' },
+         { $group: { _id : '$tags'}}
+        ],
+        (err, tags) => {
+            if (err) {
+                next(err);
+                return;
+            }          
+
+            res.json({success: true, tags});  
+        } 
+    );
 });
 
 // Funcion que crea la condicion de busqueda
