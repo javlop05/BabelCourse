@@ -3,7 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent }  from './app.component';
-import { CajaComponent } from './caja.component';
+import { CajaComponent } from './ejemplos/caja.component';
+import { EjemplosBindingComponent } from './ejemplos/ejemplos-binding.component';
+import { EjemplosComponentesComponent } from './ejemplos/ejemplos-componentes.component';
+import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
 
 @NgModule({
   imports: [  // Metemos todos los modulos que necesita mi app
@@ -12,7 +15,10 @@ import { CajaComponent } from './caja.component';
   ],
   declarations: [ // Metemos todos los componentes, directivas y pipes
      AppComponent,
-     CajaComponent
+     CajaComponent,
+     EjemplosBindingComponent,
+     EjemplosComponentesComponent,
+     ListaContactosComponent
   ],
   providers: [ // Metemos los servicios
   
@@ -21,4 +27,5 @@ import { CajaComponent } from './caja.component';
     AppComponent 
   ]
 })
+
 export class AppModule { }

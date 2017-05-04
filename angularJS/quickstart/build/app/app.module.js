@@ -9,7 +9,10 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
-var caja_component_1 = require("./caja.component");
+var caja_component_1 = require("./ejemplos/caja.component");
+var ejemplos_binding_component_1 = require("./ejemplos/ejemplos-binding.component");
+var ejemplos_componentes_component_1 = require("./ejemplos/ejemplos-componentes.component");
+var lista_contactos_component_1 = require("./lista-contactos/lista-contactos.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,7 +26,10 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
-            caja_component_1.CajaComponent
+            caja_component_1.CajaComponent,
+            ejemplos_binding_component_1.EjemplosBindingComponent,
+            ejemplos_componentes_component_1.EjemplosComponentesComponent,
+            lista_contactos_component_1.ListaContactosComponent
         ],
         providers: [],
         bootstrap: [

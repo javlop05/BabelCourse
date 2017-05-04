@@ -1,18 +1,4 @@
-<!--<h1> Hello {{name}}</h1>
+<!--<ejemplos-binding></ejemplos-binding>
+<ejemplos-componentes></ejemplos-componentes>-->
 
-<h2> Y el número de la suerte es: {{numeroDeLaSuerte}}</h2>
-<textarea [rows]="textAreaLineas"></textarea>
-<div [class.caja]="pintamosClase"></div>
-<div [ngClass]="clases"></div>
-<p [style.color]="obtenerColor()">Buenos dias</p>
-<p [ngStyle]="obtenerEstilos()">buenas tardes</p>
-
-<button (click)="mostrarMensaje()">Mostrar mensaje</button>
-
-<input [(ngModel)]="mensaje" type="text" /> {{ mensaje }}
--->
-
-<caja (encima)="escribirMensaje($event)"></caja>
-<caja (encima)="escribirMensaje($event)" color="green"></caja>
-<caja (encima)="escribirMensaje($event)"></caja>
-<caja (encima)="escribirMensaje($event)" color="green"></caja>
+<lista-contactos [contactos]="listaContactos"></lista-contactos>

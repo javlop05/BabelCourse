@@ -10,7 +10,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
             width: 100px;
             height: 100px;
         }
-
   `]
 })
 

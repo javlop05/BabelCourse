@@ -9,7 +9,7 @@ $ cd agenda
 $ npm install
 ```
 
-Y por último lanzar la aplicación en el navegador conç:
+Y por último lanzar la aplicación en el navegador con:
 ```
 $ npm start
 ```
