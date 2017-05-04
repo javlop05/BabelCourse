@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent }  from './app.component';
+import { CajaComponent } from './caja.component';
 
 @NgModule({
   imports: [  // Metemos todos los modulos que necesita mi app
@@ -10,7 +11,8 @@ import { AppComponent }  from './app.component';
     FormsModule
   ],
   declarations: [ // Metemos todos los componentes, directivas y pipes
-     AppComponent
+     AppComponent,
+     CajaComponent
   ],
   providers: [ // Metemos los servicios
   

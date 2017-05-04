@@ -21,6 +21,7 @@ var AppComponent = (function () {
         this.textAreaLineas = 6;
         this.pintamosClase = true;
         this.clases = { uno: true, dos: true };
+        this.mensaje = 'Escribe algo';
     }
     //binding de estilos
     AppComponent.prototype.obtenerColor = function () {
@@ -35,12 +36,15 @@ var AppComponent = (function () {
     AppComponent.prototype.mostrarMensaje = function () {
         alert('Hola señores');
     };
+    AppComponent.prototype.escribirMensaje = function (mensaje) {
+        console.log(mensaje);
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n    <h1>Hello {{name}}</h1>\n    <h2> Y el n\u00FAmero de la suerte es: {{numeroDeLaSuerte}}</h2>\n    <textarea [rows]=\"textAreaLineas\"></textarea>\n    <div [class.caja]=\"pintamosClase\"></div>\n    <div [ngClass]=\"clases\"></div>\n    <p [style.color]=\"obtenerColor()\">Buenos dias</p>\n    <p [ngStyle]=\"obtenerEstilos()\">buenas tardes</p>\n    <button (click)=\"mostrarMensaje()\">Mostrar mensaje</button>\n    <input [(ngModel)]=\"mensaje\" type=\"text\"/>\n    {{ mensaje }}\n    ",
+        templateUrl: '/app/app.component.html',
         styles: ["\n    .caja {\n      width: 50px;\n      height: 50px;\n      background-color: red;\n    }\n  "]
     }),
     __metadata("design:paramtypes", [])

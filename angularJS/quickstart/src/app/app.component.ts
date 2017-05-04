@@ -8,18 +8,7 @@ interface Vehiculo {
 
 @Component({
   selector: 'my-app',
-  template: `
-    <h1>Hello {{name}}</h1>
-    <h2> Y el número de la suerte es: {{numeroDeLaSuerte}}</h2>
-    <textarea [rows]="textAreaLineas"></textarea>
-    <div [class.caja]="pintamosClase"></div>
-    <div [ngClass]="clases"></div>
-    <p [style.color]="obtenerColor()">Buenos dias</p>
-    <p [ngStyle]="obtenerEstilos()">buenas tardes</p>
-    <button (click)="mostrarMensaje()">Mostrar mensaje</button>
-    <input [(ngModel)]="mensaje" type="text"/>
-    {{ mensaje }}
-    `,
+  templateUrl: '/app/app.component.html',
   styles: [`
     .caja {
       width: 50px;
@@ -39,6 +28,8 @@ export class AppComponent  {
 
   clases: any = { uno: true, dos: true};
 
+  mensaje: string = 'Escribe algo';
+
   constructor() {
 
   }
@@ -57,6 +48,10 @@ export class AppComponent  {
 
   mostrarMensaje() : void {
     alert('Hola señores');
+  }
+
+  escribirMensaje(mensaje: string) {
+    console.log(mensaje);
   }
 
   /*n: number = 0;
