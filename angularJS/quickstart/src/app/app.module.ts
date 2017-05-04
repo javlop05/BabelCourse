@@ -9,6 +9,7 @@ import { EjemplosComponentesComponent } from './ejemplos/ejemplos-componentes.co
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
 import { ContactosService } from './servicios/contactos.service';
 import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component';
+import { Servicio1, Servicio2, EjemplosInyeccionComponent, Servicio2Provider } from './ejemplos/ejemplos-inyeccion.component';
 
 @NgModule({
   imports: [  // Metemos todos los modulos que necesita mi app
@@ -21,10 +22,13 @@ import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto
      EjemplosBindingComponent,
      EjemplosComponentesComponent,
      ListaContactosComponent,
-     DetallesContactoComponent
+     DetallesContactoComponent,
+     EjemplosInyeccionComponent
   ],
   providers: [ // Metemos los servicios
-    ContactosService
+    ContactosService,
+    Servicio1, // Este tiene @Injectable
+    Servicio2Provider
   ],
   bootstrap: [ // Componente raiz de nuestra app
     AppComponent 

@@ -15,6 +15,7 @@ var ejemplos_componentes_component_1 = require("./ejemplos/ejemplos-componentes.
 var lista_contactos_component_1 = require("./lista-contactos/lista-contactos.component");
 var contactos_service_1 = require("./servicios/contactos.service");
 var detalles_contacto_component_1 = require("./detalles-contacto/detalles-contacto.component");
+var ejemplos_inyeccion_component_1 = require("./ejemplos/ejemplos-inyeccion.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -32,10 +33,13 @@ AppModule = __decorate([
             ejemplos_binding_component_1.EjemplosBindingComponent,
             ejemplos_componentes_component_1.EjemplosComponentesComponent,
             lista_contactos_component_1.ListaContactosComponent,
-            detalles_contacto_component_1.DetallesContactoComponent
+            detalles_contacto_component_1.DetallesContactoComponent,
+            ejemplos_inyeccion_component_1.EjemplosInyeccionComponent
         ],
         providers: [
-            contactos_service_1.ContactosService
+            contactos_service_1.ContactosService,
+            ejemplos_inyeccion_component_1.Servicio1,
+            ejemplos_inyeccion_component_1.Servicio2Provider
         ],
         bootstrap: [
             app_component_1.AppComponent

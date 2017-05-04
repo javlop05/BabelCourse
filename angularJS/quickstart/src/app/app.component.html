@@ -1,9 +1,20 @@
 <!--<ejemplos-binding></ejemplos-binding>
 <ejemplos-componentes></ejemplos-componentes>-->
+<ejemplos-inyeccion></ejemplos-inyeccion>
 
-<lista-contactos [contactos]="listaContactos" 
-                 (seleccionado)="mostrarDetalles($event)"></lista-contactos>
+<div class="container">
 
-<detalles-contacto [contacto]="contactoSeleccionado">
+    <!-- Titulo -->
+    <header>
+        <h1>Mi agenda</h1>
+    </header>
 
-</detalles-contacto>
+    <!-- Coleccion de contactos -->
+    <lista-contactos [contactos]="listaContactos" (seleccionado)="mostrarDetalles($event)"></lista-contactos>
+
+    <!-- Detalles de contacto -->
+    <detalles-contacto [contacto]="contactoSeleccionado">
+
+    </detalles-contacto>
+
+</div>

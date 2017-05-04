@@ -29,7 +29,8 @@ __decorate([
 ListaContactosComponent = __decorate([
     core_1.Component({
         selector: 'lista-contactos',
-        templateUrl: '/app/lista-contactos/lista-contactos.component.html'
+        templateUrl: '/app/lista-contactos/lista-contactos.component.html',
+        styleUrls: ['app/lista-contactos/lista-contactos.component.css']
     })
 ], ListaContactosComponent);
 exports.ListaContactosComponent = ListaContactosComponent;
