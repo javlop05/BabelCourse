@@ -7,6 +7,8 @@ import { CajaComponent } from './ejemplos/caja.component';
 import { EjemplosBindingComponent } from './ejemplos/ejemplos-binding.component';
 import { EjemplosComponentesComponent } from './ejemplos/ejemplos-componentes.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
+import { ContactosService } from './servicios/contactos.service';
+import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component';
 
 @NgModule({
   imports: [  // Metemos todos los modulos que necesita mi app
@@ -18,10 +20,11 @@ import { ListaContactosComponent } from './lista-contactos/lista-contactos.compo
      CajaComponent,
      EjemplosBindingComponent,
      EjemplosComponentesComponent,
-     ListaContactosComponent
+     ListaContactosComponent,
+     DetallesContactoComponent
   ],
   providers: [ // Metemos los servicios
-  
+    ContactosService
   ],
   bootstrap: [ // Componente raiz de nuestra app
     AppComponent 

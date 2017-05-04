@@ -11,13 +11,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var ListaContactosComponent = (function () {
     function ListaContactosComponent() {
+        this.seleccionado = new core_1.EventEmitter();
     }
+    ListaContactosComponent.prototype.notificarContactoSeleccionado = function (contacto) {
+        this.seleccionado.emit(contacto);
+    };
     return ListaContactosComponent;
 }());
 __decorate([
     core_1.Input(),
     __metadata("design:type", Array)
 ], ListaContactosComponent.prototype, "contactos", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], ListaContactosComponent.prototype, "seleccionado", void 0);
 ListaContactosComponent = __decorate([
     core_1.Component({
         selector: 'lista-contactos',

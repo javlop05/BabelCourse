@@ -9,25 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var contactos_service_1 = require("./servicios/contactos.service");
-var AppComponent = (function () {
-    function AppComponent(_contactosService) {
-        this._contactosService = _contactosService;
+var contacto_1 = require("../entidades/contacto");
+var DetallesContactoComponent = (function () {
+    function DetallesContactoComponent() {
     }
-    AppComponent.prototype.ngOnInit = function () {
-        this.listaContactos = this._contactosService.obtenerContactos();
-    };
-    AppComponent.prototype.mostrarDetalles = function (contacto) {
-        this.contactoSeleccionado = contacto;
-    };
-    return AppComponent;
+    return DetallesContactoComponent;
 }());
-AppComponent = __decorate([
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", contacto_1.Contacto)
+], DetallesContactoComponent.prototype, "contacto", void 0);
+DetallesContactoComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        templateUrl: '/app/app.component.html'
-    }),
-    __metadata("design:paramtypes", [contactos_service_1.ContactosService])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+        selector: 'detalles-contacto',
+        templateUrl: '/app/detalles-contacto/detalles-contacto.component.html'
+    })
+], DetallesContactoComponent);
+exports.DetallesContactoComponent = DetallesContactoComponent;
+//# sourceMappingURL=detalles-contacto.component.js.map
