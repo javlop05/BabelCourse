@@ -1,0 +1,52 @@
+<form #contactoForm="ngForm" (ngSubmit)="guardarContacto(contactoForm)" novalidate>
+    <!-- Nombre -->
+    <div>
+        <label for="nombre"> Nombre </label>
+        <input type="text" 
+               id="nombre"
+               name="nombre"
+               ngModel
+               #nombreRef="ngModel"
+               placeholder="Ej. Tim"
+               required
+               minlength="3">
+        <div *ngIf="nombreRef.touched && nombreRef.errors?.required" 
+             class="mensaje-error">
+            <span> El campo nombre es requerido </span>
+        </div>
+        <div *ngIf="nombreRef.touched && nombreRef.errors?.minlength" 
+             class="mensaje-error">
+            <span> El campo nombre debe tener al menos {{nombreRef.errors.minlength.requiredLength}} letras </span>
+        </div>
+    </div>
+
+    <!-- {{nombreRef.errors | json}} -->
+
+    <!-- Apellidos -->
+    <div>
+        <label for="apellidos">Apellidos</label>
+        <input type="text"
+               id="apellidos"
+               name="apellidos"
+               ngModel
+               #apellidosRef="ngModel"
+               placeholder="Ej. Burton"
+               required
+               minlength="2">
+        <div *ngIf="apellidosRef.touched && apellidosRef.errors?.required" 
+             class="mensaje-error">
+            <span> El campo apellidos es requerido </span>
+        </div>
+        <div *ngIf="apellidosRef.touched && apellidosRef.errors?.minlength" 
+             class="mensaje-error">
+            <span> El campo apellidos debe tener al menos {{apellidosRef.errors.minlength.requiredLength}} letras </span>
+        </div>
+    </div>
+
+    <!-- Guardar contacto -->
+    <button type="submit"
+            class="button-primary"
+            [disabled]="contactoForm.invalid">
+            Guardar
+    </button>
+</form>
