@@ -1,0 +1,44 @@
+{
+  "contactos": [
+    {
+      "id": 1,
+      "nombre": "Steve",
+      "apellidos": "Jobs",
+      "email": "steve.jobs@apple.com",
+      "telefono": "643548645",
+      "twitter": "@stevejobs",
+      "facebook": "stevejobs",
+      "avatar": ""
+    },
+    {
+      "id": 2,
+      "nombre": "Bill",
+      "apellidos": "Gates",
+      "email": "bill.gates@microsoft.com",
+      "telefono": "8674538747",
+      "twitter": "@billgates",
+      "facebook": "billgates",
+      "avatar": ""
+    },
+    {
+      "id": 3,
+      "nombre": "Elon",
+      "apellidos": "Musk",
+      "email": "elon.musk@tesla.com",
+      "telefono": "53786745655",
+      "twitter": "@elonmusk",
+      "facebook": "elonmusk",
+      "avatar": ""
+    },
+    {
+      "nombre": "refghf",
+      "apellidos": "sdghf",
+      "email": "gsdag@sdilhgl.es",
+      "telefono": "+345645645321",
+      "twitter": "",
+      "facebook": "",
+      "avatar": "",
+      "id": 4
+    }
+  ]
+}
