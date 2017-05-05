@@ -24,6 +24,9 @@ var AppComponent = (function () {
         console.log(ruta);
         window.open(ruta, '_blank');
     };
+    AppComponent.prototype.guardarContacto = function (contacto) {
+        console.log('Guardado', contacto);
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
