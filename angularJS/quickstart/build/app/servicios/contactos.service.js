@@ -6,26 +6,42 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
+var contacto_1 = require("../entidades/contacto");
 var ContactosService = (function () {
     function ContactosService() {
     }
     ContactosService.prototype.obtenerContactos = function () {
         return [
-            {
-                nombre: 'Steve Jobs',
+            contacto_1.Contacto.desdeJSON({
+                id: 1,
+                nombre: 'Steve',
+                apellidos: 'Jobs',
                 email: 'steve.jobs@apple.com',
-                telefono: '643548645'
-            },
-            {
-                nombre: 'Bill Gates',
+                telefono: '643548645',
+                twitter: '@stevejobs',
+                facebook: 'stevejobs',
+                avatar: ''
+            }),
+            contacto_1.Contacto.desdeJSON({
+                id: 2,
+                nombre: 'Bill',
+                apellidos: 'Gates',
                 email: 'bill.gates@microsoft.com',
-                telefono: '8674538747'
-            },
-            {
-                nombre: 'Elon Musk',
+                telefono: '8674538747',
+                twitter: '@billgates',
+                facebook: 'billgates',
+                avatar: ''
+            }),
+            contacto_1.Contacto.desdeJSON({
+                id: 3,
+                nombre: 'Elon',
+                apellidos: 'Musk',
                 email: 'elon.musk@tesla.com',
-                telefono: '53786745655'
-            }
+                telefono: '53786745655',
+                twitter: '@elonmusk',
+                facebook: 'elonmusk',
+                avatar: ''
+            })
         ];
     };
     return ContactosService;

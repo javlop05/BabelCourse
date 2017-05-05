@@ -20,6 +20,10 @@ var AppComponent = (function () {
     AppComponent.prototype.mostrarDetalles = function (contacto) {
         this.contactoSeleccionado = contacto;
     };
+    AppComponent.prototype.navegarRuta = function (ruta) {
+        console.log(ruta);
+        window.open(ruta, '_blank');
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
