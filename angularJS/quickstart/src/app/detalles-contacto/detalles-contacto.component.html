@@ -1,8 +1,8 @@
-<div *ngIf="contacto">
+<div class="u-full-width" *ngIf="contacto">
     <!-- Con la directiva ngIf escribimos o no todo el elemento -->
 
     <!-- Avatar -->
-    <img [src]="contacto?.avatar" alt="avatar">
+    <img [src]="contacto?.avatar">
 
     <!-- Nombre del contacto -->
     <h5>{{ contacto?.nombre }} {{ contacto?.apellido }}</h5>

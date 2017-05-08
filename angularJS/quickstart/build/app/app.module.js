@@ -18,6 +18,10 @@ var contactos_service_1 = require("./servicios/contactos.service");
 var detalles_contacto_component_1 = require("./detalles-contacto/detalles-contacto.component");
 var ejemplos_inyeccion_component_1 = require("./ejemplos/ejemplos-inyeccion.component");
 var formulario_contacto_component_1 = require("./formulario-contacto/formulario-contacto.component");
+var app_routing_module_1 = require("./app-routing.module");
+var mis_contactos_component_1 = require("./mis-contactos/mis-contactos.component");
+var nuevo_contacto_component_1 = require("./nuevo-contacto/nuevo-contacto.component");
+var contactos_resolve_service_1 = require("./servicios/contactos-resolve.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,7 +32,8 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
-            http_1.HttpModule
+            http_1.HttpModule,
+            app_routing_module_1.AppRoutingModule
         ],
         declarations: [
             app_component_1.AppComponent,
@@ -38,12 +43,15 @@ AppModule = __decorate([
             lista_contactos_component_1.ListaContactosComponent,
             detalles_contacto_component_1.DetallesContactoComponent,
             ejemplos_inyeccion_component_1.EjemplosInyeccionComponent,
-            formulario_contacto_component_1.FormularioContactoComponent
+            formulario_contacto_component_1.FormularioContactoComponent,
+            mis_contactos_component_1.MisContactosComponent,
+            nuevo_contacto_component_1.NuevoContactoComponent
         ],
         providers: [
             contactos_service_1.ContactosService,
             ejemplos_inyeccion_component_1.Servicio1,
-            ejemplos_inyeccion_component_1.Servicio2Provider
+            ejemplos_inyeccion_component_1.Servicio2Provider,
+            contactos_resolve_service_1.ContactosResolveService
         ],
         bootstrap: [
             app_component_1.AppComponent

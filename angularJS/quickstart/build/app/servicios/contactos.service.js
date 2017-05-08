@@ -15,7 +15,6 @@ var contacto_1 = require("../entidades/contacto");
 var ContactosService = (function () {
     function ContactosService(_http) {
         this._http = _http;
-        this._contactos = [];
     }
     ContactosService.prototype.obtenerContactos = function () {
         return this._http
@@ -24,10 +23,9 @@ var ContactosService = (function () {
             // Obtengo la lista de objetos que viene en el body
             var lista = res.json();
             // Creo una lista de contactos y los devuelvo
-            lista.map(function (elemento) {
+            return lista.map(function (elemento) {
                 return contacto_1.Contacto.desdeJSON(elemento);
             });
-            return lista;
         });
     };
     ContactosService.prototype.guardarContacto = function (contacto) {
