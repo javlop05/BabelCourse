@@ -1,8 +1,14 @@
 <form #contactoForm="ngForm" (ngSubmit)="guardarContacto(contactoForm)" novalidate>
 
+    <div class="row">
+        <div class="offset-by-three six columns avatar">
+            <img [src]="rutaAvatar" alt="">
+        </div>
+    </div>
+
     <!-- Nombre -->
     <div class="row">
-        <div class="offset-by-three six-columns">
+        <div class="offset-by-three six columns">
             <div>
                 <label for="nombre"> Nombre </label>
                 <input type="text" 
@@ -29,7 +35,7 @@
 
     <!-- Apellidos -->
     <div class="row">
-        <div class="offset-by-three six-columns">
+        <div class="offset-by-three six columns">
             <div>
                 <label for="apellidos">Apellidos</label>
                 <input type="text"
@@ -54,7 +60,7 @@
 
     <!-- Email -->
     <div class="row">
-        <div class="offset-by-three six-columns">
+        <div class="offset-by-three six columns">
             <div>
                 <label for="email">Email</label>
                 <input type="text"
@@ -79,7 +85,7 @@
 
     <!-- Telefono -->
     <div class="row">
-        <div class="offset-by-three six-columns">
+        <div class="offset-by-three six columns">
             <div>
                 <label for="telefono">Teléfono</label>
                 <input type="text"
@@ -105,7 +111,7 @@
 
     <!-- Facebook -->
     <div class="row">
-        <div class="offset-by-three six-columns">
+        <div class="offset-by-three six columns">
             <div>
                 <label for="facebook">Facebook</label>
                 <input type="text"
@@ -120,7 +126,7 @@
 
     <!-- Twitter -->
     <div class="row">
-        <div class="offset-by-three six-columns">
+        <div class="offset-by-three six columns">
             <div>
                 <label for="twitter">Email</label>
                 <input type="text"
@@ -136,7 +142,7 @@
 
     <!-- Guardar contacto -->
     <div class="row">
-        <div class="offset-by-three six-columns">
+        <div class="offset-by-three six columns">
             <button type="submit"
                     class="button-primary"
                     [disabled]="contactoForm.invalid">

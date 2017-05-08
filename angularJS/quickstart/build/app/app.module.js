@@ -22,6 +22,7 @@ var app_routing_module_1 = require("./app-routing.module");
 var mis_contactos_component_1 = require("./mis-contactos/mis-contactos.component");
 var nuevo_contacto_component_1 = require("./nuevo-contacto/nuevo-contacto.component");
 var contactos_resolve_service_1 = require("./servicios/contactos-resolve.service");
+var direcciones_1 = require("./configuracion/direcciones");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -51,7 +52,8 @@ AppModule = __decorate([
             contactos_service_1.ContactosService,
             ejemplos_inyeccion_component_1.Servicio1,
             ejemplos_inyeccion_component_1.Servicio2Provider,
-            contactos_resolve_service_1.ContactosResolveService
+            contactos_resolve_service_1.ContactosResolveService,
+            direcciones_1.ProveedorDirecciones
         ],
         bootstrap: [
             app_component_1.AppComponent

@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
 import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
 import { ContactosResolveService } from './servicios/contactos-resolve.service';
+import { ProveedorDirecciones } from './configuracion/direcciones';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ContactosResolveService } from './servicios/contactos-resolve.service';
     ContactosService,
     Servicio1, // Este tiene @Injectable
     Servicio2Provider,
-    ContactosResolveService
+    ContactosResolveService,
+    ProveedorDirecciones
   ],
   bootstrap: [ // Componente raiz de nuestra app
     AppComponent 
