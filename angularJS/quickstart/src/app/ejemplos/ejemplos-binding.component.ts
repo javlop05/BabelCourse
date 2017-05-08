@@ -8,7 +8,7 @@ interface Vehiculo {
 
 @Component({
     selector: 'ejemplos-binding',
-    templateUrl: '/app/ejemplos/ejemplos-binding.component.html',
+    templateUrl: './ejemplos-binding.component.html',
     styles: [`
     .caja {
       width: 50px;

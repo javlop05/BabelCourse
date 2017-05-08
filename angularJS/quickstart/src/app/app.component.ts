@@ -4,7 +4,7 @@ import { ContactosService } from './servicios/contactos.service';
 
 @Component({
   selector: 'my-app',
-  templateUrl: '/app/app.component.html'
+  templateUrl: './app.component.html'
 })
 
 export class AppComponent implements OnInit {
@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
   guardarContacto(contacto: Contacto) {
     this._contactosService.guardarContacto(contacto)
                           .subscribe(contacto => {
-                              console.log('Guardado', contacto);
+                              this.listaContactos.push(contacto);
                           });
   }
 

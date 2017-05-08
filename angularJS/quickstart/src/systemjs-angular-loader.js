@@ -21,6 +21,9 @@ module.exports.translate = function(load){
     basePath = basePath.replace(baseHref, '');
   }
 
+  //Salva a la app de tener que poner las rutas absolutas
+  basePath = basePath.replace(/^build\//, '');
+
   load.source = load.source
     .replace(templateUrlRegex, function(match, quote, url){
       var resolvedUrl = url;
