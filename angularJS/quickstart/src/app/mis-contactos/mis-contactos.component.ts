@@ -37,4 +37,22 @@ export class MisContactosComponent implements OnInit {
         console.log(ruta);
         window.open(ruta, '_blank');
     }
+
+    eliminarContacto(contacto: Contacto) {
+        if (confirm(`Estas seguro que quieres eliminar a ${contacto.nombre}`)) {
+            this._contactosService.eliminarContacto(contacto)
+                .subscribe(() => {
+                    // Busco el contacto en la lista para eliminarlo
+                    const indice: number = 
+                        this.listaContactos.findIndex(
+                            (c: Contacto) => c.id === contacto.id
+                        );
+                    
+                    if (indice != -1) {
+                        this.listaContactos.splice(indice, 1);
+                        this.contactoSeleccionado = null;
+                    }
+                });
+        }
+    }
 }

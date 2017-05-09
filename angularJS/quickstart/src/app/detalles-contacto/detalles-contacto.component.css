@@ -1,10 +1,18 @@
-button {
+.boton-red-social {
     font-size: 32px;
     padding: 0;
     margin: 0;
     border: 0;
 }
 
-button:hover {
+.boton-red-social:hover {
     color: #1eaedb;
+}
+
+div {
+    text-align: center;
+}
+
+img {
+    border-radius: 10px;
 }

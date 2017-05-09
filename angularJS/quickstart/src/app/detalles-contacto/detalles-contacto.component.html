@@ -9,11 +9,11 @@
     <hr>
 
     <!-- Redes sociales -->
-    <button type="button" (click)="notificarFacebook()"> 
+    <button type="button" class="boton-red-social" (click)="notificarFacebook()"> 
         <i class="fa fa-facebook-square" aria-hidden="true"></i>
     </button>
 
-    <button type="button" (click)="notificarTwitter()"> 
+    <button type="button" class="boton-red-social" (click)="notificarTwitter()"> 
         <i class="fa fa-twitter-square" aria-hidden="true"></i>
     </button>
 
@@ -22,4 +22,9 @@
 
     <!-- Telefono del contacto -->
     <span>{{ contacto?.telefono }}</span>
+
+    <!-- Botón de eliminar contacto -->
+    <button type="button"
+            (click)="notificarEliminacion()"
+            class="u-full-width">Eliminar</button>
 </div>

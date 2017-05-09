@@ -34,6 +34,20 @@ var MisContactosComponent = (function () {
         console.log(ruta);
         window.open(ruta, '_blank');
     };
+    MisContactosComponent.prototype.eliminarContacto = function (contacto) {
+        var _this = this;
+        if (confirm("Estas seguro que quieres eliminar a " + contacto.nombre)) {
+            this._contactosService.eliminarContacto(contacto)
+                .subscribe(function () {
+                // Busco el contacto en la lista para eliminarlo
+                var indice = _this.listaContactos.findIndex(function (c) { return c.id === contacto.id; });
+                if (indice != -1) {
+                    _this.listaContactos.splice(indice, 1);
+                    _this.contactoSeleccionado = null;
+                }
+            });
+        }
+    };
     return MisContactosComponent;
 }());
 MisContactosComponent = __decorate([

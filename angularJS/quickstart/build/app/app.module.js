@@ -26,6 +26,8 @@ var direcciones_1 = require("./configuracion/direcciones");
 var ejemplos_observables_component_1 = require("./ejemplos/ejemplos-observables.component");
 var ejemplos_pipe_component_1 = require("./ejemplos/ejemplos-pipe.component");
 var ordernar_pipe_1 = require("./pipes/ordernar.pipe");
+var ejemplos_directivas_component_1 = require("./ejemplos/ejemplos-directivas.component");
+var ejemplos_directivas_directive_1 = require("./ejemplos/ejemplos-directivas.directive");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -54,7 +56,9 @@ AppModule = __decorate([
             ejemplos_observables_component_1.EjemplosObservablesComponent,
             ejemplos_observables_component_1.EjemplosObservablesWikipediaComponent,
             ejemplos_pipe_component_1.EjemplosPipeComponent,
-            ordernar_pipe_1.OrdenarPipe
+            ordernar_pipe_1.OrdenarPipe,
+            ejemplos_directivas_directive_1.EjemplosDirectivasAtributoDirective,
+            ejemplos_directivas_component_1.EjemplosDirectivasComponent
         ],
         providers: [
             contactos_service_1.ContactosService,
