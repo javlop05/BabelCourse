@@ -1,7 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { CajaComponent } from './ejemplos/caja.component';
@@ -17,6 +17,7 @@ import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
 import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
 import { ContactosResolveService } from './servicios/contactos-resolve.service';
 import { ProveedorDirecciones } from './configuracion/direcciones';
+import { EjemplosObservablesComponent, EjemplosObservablesWikipediaComponent } from './ejemplos/ejemplos-observables.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ProveedorDirecciones } from './configuracion/direcciones';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    JsonpModule
   ],
   declarations: [ // Metemos todos los componentes, directivas y pipes
      AppComponent,
@@ -36,7 +38,9 @@ import { ProveedorDirecciones } from './configuracion/direcciones';
      EjemplosInyeccionComponent,
      FormularioContactoComponent,
      MisContactosComponent,
-     NuevoContactoComponent
+     NuevoContactoComponent,
+     EjemplosObservablesComponent,
+     EjemplosObservablesWikipediaComponent
   ],
   providers: [ // Metemos los servicios
     ContactosService,
