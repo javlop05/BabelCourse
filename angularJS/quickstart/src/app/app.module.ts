@@ -18,6 +18,8 @@ import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.componen
 import { ContactosResolveService } from './servicios/contactos-resolve.service';
 import { ProveedorDirecciones } from './configuracion/direcciones';
 import { EjemplosObservablesComponent, EjemplosObservablesWikipediaComponent } from './ejemplos/ejemplos-observables.component';
+import { EjemplosPipeComponent } from './ejemplos/ejemplos-pipe.component';
+import { OrdenarPipe } from './pipes/ordernar.pipe';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { EjemplosObservablesComponent, EjemplosObservablesWikipediaComponent } f
      MisContactosComponent,
      NuevoContactoComponent,
      EjemplosObservablesComponent,
-     EjemplosObservablesWikipediaComponent
+     EjemplosObservablesWikipediaComponent,
+     EjemplosPipeComponent,
+     OrdenarPipe
   ],
   providers: [ // Metemos los servicios
     ContactosService,

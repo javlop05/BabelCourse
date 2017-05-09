@@ -60,7 +60,7 @@ export class EjemplosObservablesComponent {
         <div>
             <input (input)="buscarWikipedia($event)"/>
             <ul>
-                <li *ngFor="let resultado of resultados">
+                <li *ngFor="let resultado of _subscripcionCajaTexto | async">
                     {{ resultado }}
                 </li>
             </ul>
@@ -73,11 +73,11 @@ export class EjemplosObservablesWikipediaComponent implements OnDestroy {
 
     resultados: string[];
 
-    _subscripcionCajaTexto: Subscription
+    //_subscripcionCajaTexto: Subscription
+    _subscripcionCajaTexto: any;
 
     constructor(private _jsonp: Jsonp) {
         this._subscripcionCajaTexto =
-
             this._flujoDeDatosCajaTexto
                 .debounceTime(500)
                 .distinctUntilChanged()
@@ -85,9 +85,9 @@ export class EjemplosObservablesWikipediaComponent implements OnDestroy {
                     console.log('voy a buscar la palabra:', palabra);
                     return this.peticionBusqueda(palabra);
                 })
-                .subscribe(resultados => {
-                    this.resultados = resultados;
-                });
+                //.subscribe(resultados => {
+                //    this.resultados = resultados;
+                //});
     }
 
     buscarWikipedia(evento: KeyboardEvent) {

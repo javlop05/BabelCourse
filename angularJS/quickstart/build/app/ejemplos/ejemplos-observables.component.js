@@ -61,10 +61,10 @@ var EjemplosObservablesWikipediaComponent = (function () {
                 .switchMap(function (palabra) {
                 console.log('voy a buscar la palabra:', palabra);
                 return _this.peticionBusqueda(palabra);
-            })
-                .subscribe(function (resultados) {
-                _this.resultados = resultados;
             });
+        //.subscribe(resultados => {
+        //    this.resultados = resultados;
+        //});
     }
     EjemplosObservablesWikipediaComponent.prototype.buscarWikipedia = function (evento) {
         // Hacemos emision de evento
@@ -97,7 +97,7 @@ var EjemplosObservablesWikipediaComponent = (function () {
 EjemplosObservablesWikipediaComponent = __decorate([
     core_1.Component({
         selector: 'ejemplos-observables-wikipedia',
-        template: "\n        <div>\n            <input (input)=\"buscarWikipedia($event)\"/>\n            <ul>\n                <li *ngFor=\"let resultado of resultados\">\n                    {{ resultado }}\n                </li>\n            </ul>\n        </div>\n    "
+        template: "\n        <div>\n            <input (input)=\"buscarWikipedia($event)\"/>\n            <ul>\n                <li *ngFor=\"let resultado of _subscripcionCajaTexto | async\">\n                    {{ resultado }}\n                </li>\n            </ul>\n        </div>\n    "
     }),
     __metadata("design:paramtypes", [http_1.Jsonp])
 ], EjemplosObservablesWikipediaComponent);

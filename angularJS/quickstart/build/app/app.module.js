@@ -24,6 +24,8 @@ var nuevo_contacto_component_1 = require("./nuevo-contacto/nuevo-contacto.compon
 var contactos_resolve_service_1 = require("./servicios/contactos-resolve.service");
 var direcciones_1 = require("./configuracion/direcciones");
 var ejemplos_observables_component_1 = require("./ejemplos/ejemplos-observables.component");
+var ejemplos_pipe_component_1 = require("./ejemplos/ejemplos-pipe.component");
+var ordernar_pipe_1 = require("./pipes/ordernar.pipe");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -50,7 +52,9 @@ AppModule = __decorate([
             mis_contactos_component_1.MisContactosComponent,
             nuevo_contacto_component_1.NuevoContactoComponent,
             ejemplos_observables_component_1.EjemplosObservablesComponent,
-            ejemplos_observables_component_1.EjemplosObservablesWikipediaComponent
+            ejemplos_observables_component_1.EjemplosObservablesWikipediaComponent,
+            ejemplos_pipe_component_1.EjemplosPipeComponent,
+            ordernar_pipe_1.OrdenarPipe
         ],
         providers: [
             contactos_service_1.ContactosService,
