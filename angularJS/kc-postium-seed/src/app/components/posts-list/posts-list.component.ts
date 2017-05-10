@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { Router } from '@angular/router';
 
 import { Post } from "../../models/post";
 
@@ -9,6 +10,8 @@ import { Post } from "../../models/post";
 export class PostsListComponent {
 
     @Input() posts: Post[];
+
+    constructor(private _router: Router) { }
 
     /*------------------------------------------------------------------------------------------------------------------|
      | ~~~ Red Path ~~~                                                                                                 |
@@ -25,5 +28,8 @@ export class PostsListComponent {
      | correspondiente. Recuerda que para hacer esto necesitas inyectar como dependencia el Router de la app.  La ruta |
      | a navegar es '/posts', pasando como parámetro el identificador del post.                                        |
      |-----------------------------------------------------------------------------------------------------------------*/
+     seePostDetails(post: Post) {
+         this._router.navigate([`posts/${post.id}`]);
+     }
 
 }
