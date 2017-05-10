@@ -4,7 +4,7 @@ import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
 
 import { BackendUri } from "./settings.service";
-import { Post } from "../models/post";
+import { Post } from '../models/post';
 
 @Injectable()
 export class PostService {
@@ -56,8 +56,11 @@ export class PostService {
          |   - Ordenación: _sort=publicationDate&_order=DESC                                            |
          |----------------------------------------------------------------------------------------------*/
 
+        const actualDate = new Date().getTime();
+
         return this._http
-                   .get(`${this._backendUri}/posts`)
+                   .get(`${this._backendUri}/posts?author.id=${id}&publicationDate_lte=${actualDate}
+                        &_sort=publicationDate&_order=DESC`)
                    .map((response: Response) => Post.fromJsonToList(response.json()));
     }
 
@@ -84,9 +87,18 @@ export class PostService {
          |   - Ordenación: _sort=publicationDate&_order=DESC                                                |
          |--------------------------------------------------------------------------------------------------*/
 
+        const actualDate = new Date().getTime();
+
         return this._http
-                   .get(`${this._backendUri}/posts`)
-                   .map((response: Response) => Post.fromJsonToList(response.json()));
+                   .get(`${this._backendUri}/posts?publicationDate_lte=${actualDate}
+                        &_sort=publicationDate&_order=DESC`)
+                   .map((response: Response) => {
+                       const post =  Post.fromJsonToList(response.json())
+                       post.map((element) => {
+                           if 
+                       })
+                       return post;
+                   });
     }
 
     getPostDetails(id: number): Observable<Post> {
