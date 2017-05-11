@@ -1,8 +1,9 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup } from "@angular/forms";
 
 import { Post } from "../../models/post";
 import { User } from "../../models/user";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: "post-form",
@@ -11,13 +12,21 @@ import { User } from "../../models/user";
 })
 export class PostFormComponent implements OnInit {
 
+    post: Post;
+
     nowDatetimeLocal: string;
     publicationDateScheduled: boolean = false;
 
     @Output() postSubmitted: EventEmitter<Post> = new EventEmitter();
 
+    constructor(
+        private _activatedRoute: ActivatedRoute,
+    ) { }
+
     ngOnInit(): void {
         this.nowDatetimeLocal = this._formatDateToDatetimeLocal(new Date());
+        this._activatedRoute.data.forEach((data: { post: Post}) => this.post = data.post);
+        console.log(this.post);
     }
 
     private _formatDateToDatetimeLocal(date: Date) {
@@ -63,7 +72,6 @@ export class PostFormComponent implements OnInit {
          |-------------------------------------------------------------------------------------------------------------*/
         
         let post: Post = Post.fromJson(form.value);
-        console.log(post);
 
         post.title = (post.title) ? post.title : null;
         post.intro = (post.intro) ? post.intro : null;

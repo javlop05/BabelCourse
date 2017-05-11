@@ -3,7 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { CategoryPostsComponent } from "./components/category-posts/category-posts.component";
 import { NewsComponent } from "./components/news/news.component";
-import { NewStoryComponent } from "./components/new-story/new-story.component";
+import { NewStoryComponent } from './components/new-story/new-story.component';
 import { PostDetailsComponent } from "./components/post-details/post-details.component";
 import { UserPostsComponent } from "./components/user-posts/user-posts.component";
 import { PostDetailsResolve } from "./services/post-details-resolve.service";
@@ -34,6 +34,13 @@ const routes: Routes = [
     {
         path: "new-story",
         component: NewStoryComponent
+    },
+    {
+        path: "edit-story/:postId",
+        component: NewStoryComponent,
+        resolve: {
+            post: PostDetailsResolve
+        }
     },
     {
         path: "posts/:postId",

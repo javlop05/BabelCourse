@@ -20,7 +20,7 @@
         type="text"
         placeholder="Título"
         class="u-full-width"
-        ngModel
+        [ngModel]="post.title"
         name="title"
         #nameRef="ngModel"
         required>
@@ -36,7 +36,7 @@
         placeholder="Introduce tu historia"
         class="u-full-width georgia-font"
         autogrow
-        ngModel
+        [ngModel]="post.intro"
         name="intro"
         #introRef="ngModel"
         required></textarea>
@@ -52,7 +52,7 @@
         placeholder="Cuenta tu historia"
         class="u-full-width georgia-font"
         autogrow
-        ngModel
+        [ngModel]="post.body"
         name="body"
         #bodyRef="ngModel"
         required></textarea>
