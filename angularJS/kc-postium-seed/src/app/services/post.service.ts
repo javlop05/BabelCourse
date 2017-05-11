@@ -93,11 +93,14 @@ export class PostService {
                    .get(`${this._backendUri}/posts?publicationDate_lte=${actualDate}
                         &_sort=publicationDate&_order=DESC`)
                    .map((response: Response) => {
-                       const post =  Post.fromJsonToList(response.json())
-                       post.map((element) => {
-                           if 
-                       })
-                       return post;
+                       const post =  Post.fromJsonToList(response.json());
+                       const postListFiltered = post.filter((element) => {
+                           const categoryFound = element.categories.find((category) => {
+                                return category.id === id;
+                           });
+                            return categoryFound !== undefined;
+                       });
+                       return postListFiltered;
                    });
     }
 
