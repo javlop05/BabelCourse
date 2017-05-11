@@ -61,8 +61,14 @@ export class PostFormComponent implements OnInit {
          | nada a lo indicado en el formulario. Por tanto, pon especial atención a que los nombres indicados en los    |
          | distintos elementos del formulario se correspondan con las propiedades de la clase Post.                    |
          |-------------------------------------------------------------------------------------------------------------*/
-
+        
         let post: Post = Post.fromJson(form.value);
+        console.log(post);
+
+        post.title = (post.title) ? post.title : null;
+        post.intro = (post.intro) ? post.intro : null;
+        post.body = (post.body) ? post.body : null;
+
         post.likes = 0;
         post.author = User.defaultUser();
         post.publicationDate = this._getPostPublicationDate(form.value.publicationDate);
