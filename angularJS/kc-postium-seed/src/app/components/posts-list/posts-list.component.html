@@ -19,4 +19,5 @@
 <post-preview *ngFor="let post of posts" 
               [post]="post" 
               (clickOnPost)="showPostDetails($event)"
-              (clickOnAuthor)="showPostsOfAuthor($event)"></post-preview>
+              (clickOnAuthor)="showPostsOfAuthor($event)"
+              (clickOnEdit)="showPostEdition($event)"></post-preview>

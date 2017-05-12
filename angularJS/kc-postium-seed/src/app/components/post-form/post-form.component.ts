@@ -13,11 +13,13 @@ import { ActivatedRoute } from '@angular/router';
 export class PostFormComponent implements OnInit {
 
     post: Post;
+    creatingNew: boolean = true;
 
     nowDatetimeLocal: string;
     publicationDateScheduled: boolean = false;
 
     @Output() postSubmitted: EventEmitter<Post> = new EventEmitter();
+    @Output() postEdited: EventEmitter<Post> = new EventEmitter();
 
     constructor(
         private _activatedRoute: ActivatedRoute,
@@ -26,7 +28,7 @@ export class PostFormComponent implements OnInit {
     ngOnInit(): void {
         this.nowDatetimeLocal = this._formatDateToDatetimeLocal(new Date());
         this._activatedRoute.data.forEach((data: { post: Post}) => this.post = data.post);
-        console.log(this.post);
+        if (this.post) this.creatingNew = false;
     }
 
     private _formatDateToDatetimeLocal(date: Date) {
@@ -80,6 +82,13 @@ export class PostFormComponent implements OnInit {
         post.likes = 0;
         post.author = User.defaultUser();
         post.publicationDate = this._getPostPublicationDate(form.value.publicationDate);
-        this.postSubmitted.emit(post);
+
+        if(!this.creatingNew) {
+            post.id = this.post.id;
+            this.postEdited.emit(post);        
+        }
+
+        else 
+            this.postSubmitted.emit(post);
     }
 }

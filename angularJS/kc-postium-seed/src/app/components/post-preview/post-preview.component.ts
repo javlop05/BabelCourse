@@ -1,4 +1,4 @@
-import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { Component, Input, EventEmitter, Output, OnInit } from '@angular/core';
 
 import { Post } from "../../models/post";
 import { User } from '../../models/user';
@@ -8,12 +8,19 @@ import { User } from '../../models/user';
     templateUrl: "post-preview.component.html",
     styleUrls: ["post-preview.component.css"]
 })
-export class PostPreviewComponent {
+export class PostPreviewComponent implements OnInit {
+
+    editable: boolean = false;
 
     @Input() post: Post;
 
     @Output() clickOnPost: EventEmitter<Post> = new EventEmitter();
     @Output() clickOnAuthor: EventEmitter<User> = new EventEmitter();
+    @Output() clickOnEdit: EventEmitter<Post> = new EventEmitter();
+
+    ngOnInit(): void {
+        this.editable = (this.post.author.id == User.defaultUser().id);
+    }
 
     /*------------------------------------------------------------------------------------------------------------------|
      | ~~~ Red Path ~~~                                                                                                 |
@@ -40,5 +47,9 @@ export class PostPreviewComponent {
 
     plainTextToHtml(text: string): string {
         return `<p>${text.replace(/\n/gi, "</p><p>")}</p>`;
+    }
+
+    notifyClickOnEdit() {
+        this.clickOnEdit.emit(this.post);
     }
 }

@@ -69,3 +69,17 @@
     letter-spacing: -.004em;
     margin: 0;
 }
+
+.metadata {
+    display: inline-block;
+}
+
+.editPost {
+    display: inline-block;
+    float: right;
+    color: #00ab6b;
+}
+
+.editPost:hover {
+     cursor: pointer;
+}

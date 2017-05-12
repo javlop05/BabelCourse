@@ -37,4 +37,8 @@ export class PostsListComponent {
          this._router.navigate([`posts/${post.id}`]);
      }
 
+     showPostEdition(post: Post) {
+         this._router.navigate([`edit-story/${post.id}`])
+     }
+
 }

@@ -11,6 +11,7 @@ import { Category } from '../../models/category';
 })
 export class PostDetailsComponent implements OnInit {
 
+    editable: boolean = false;
     post: Post;
 
     constructor(
@@ -21,6 +22,7 @@ export class PostDetailsComponent implements OnInit {
     ngOnInit(): void {
         this._activatedRoute.data.forEach((data: { post: Post}) => this.post = data.post);
         window.scrollTo(0, 0);
+        this.editable = (this.post.author.id == User.defaultUser().id);
     }
 
     plainTextToHtml(text: string): string {
@@ -49,6 +51,10 @@ export class PostDetailsComponent implements OnInit {
 
      showCategory(category: Category) {
          this._router.navigate([`posts/categories/${category.id}`]);
+     }
+
+     editPost() {
+         this._router.navigate([`edit-story/${this.post.id}`]);
      }
 
 }

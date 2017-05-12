@@ -21,6 +21,7 @@
         <span class="date">{{ post.publicationDate | datePipe }}</span>
     </div>
 </div>
+<span class="editPost blink-font" *ngIf="editable" (click)="notifyClickOnEdit()">Editar</span>
 <!--
 |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 | Green Path                                                          |

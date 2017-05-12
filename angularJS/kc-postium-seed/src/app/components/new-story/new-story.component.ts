@@ -26,6 +26,11 @@ export class NewStoryComponent implements OnDestroy {
         this._postSubscription = this._postService.createPost(post).subscribe(() => this._router.navigate(["/"]));
     }
 
+    editPost(post: Post): void {
+        this._unsubscribePostCreation();
+        this._postSubscription = this._postService.editPost(post).subscribe(() => this._router.navigate(["/"]));
+    }
+
     private _unsubscribePostCreation(): void {
         if (this._postSubscription) {
             this._postSubscription.unsubscribe();

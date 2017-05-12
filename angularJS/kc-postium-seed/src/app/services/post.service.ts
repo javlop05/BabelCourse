@@ -95,6 +95,7 @@ export class PostService {
                    .map((response: Response) => {
                        const post =  Post.fromJsonToList(response.json());
                        const postListFiltered = post.filter((element) => {
+                           if (!element.categories) return false;
                            const categoryFound = element.categories.find((category) => {
                                 return category.id === id;
                            });
@@ -125,5 +126,11 @@ export class PostService {
         return this._http
                 .post(`${this._backendUri}/posts`, post)
                 .map((response: Response) => Post.fromJson(response.json()));
+    }
+
+    editPost(post: Post): Observable<Post> {
+        return this._http
+            .put(`${this._backendUri}/posts/${post.id}`, post)
+            .map((response: Response) => Post.fromJson(response.json()));
     }
 }

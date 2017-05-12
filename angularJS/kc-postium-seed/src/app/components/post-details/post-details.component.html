@@ -21,6 +21,7 @@
         <span class="date">{{ post.publicationDate | datePipe }}</span>
     </div>
 </div>
+<span class="editPost blink-font" *ngIf="editable" (click)="editPost()">Editar</span>
 <div class="post">
     <h3>{{ post.title }}</h3>
     <img *ngIf="post.media" [src]="post.media" class="u-max-full-width">
