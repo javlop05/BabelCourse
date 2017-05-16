@@ -1,18 +1,27 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Post } from "../../models/post";
 import { User } from '../../models/user';
+import { Subscription } from 'rxjs/Subscription';
+import { PostService } from '../../services/post.service';
 
 @Component({
     selector: "posts-list",
     templateUrl: "posts-list.component.html"
 })
-export class PostsListComponent {
+export class PostsListComponent implements OnDestroy {
 
     @Input() posts: Post[];
 
-    constructor(private _router: Router) { }
+    private _postSubscription: Subscription;
+
+    constructor(private _router: Router,
+                private _postService: PostService) { }
+
+    ngOnDestroy(): void {
+        this._unsubscribePostCreation();
+    }
 
     /*------------------------------------------------------------------------------------------------------------------|
      | ~~~ Red Path ~~~                                                                                                 |
@@ -40,5 +49,25 @@ export class PostsListComponent {
      showPostEdition(post: Post) {
          this._router.navigate([`edit-story/${post.id}`])
      }
+
+     likePost(post: Post) {
+        this._unsubscribePostCreation();
+        post.likes.push(User.defaultUser().email);
+        this._postSubscription = this._postService.editPost(post).subscribe(() => this._router.navigate(["/"]));
+     }
+
+     dislikePost(post: Post) {
+        this._unsubscribePostCreation();
+        const index = post.likes.indexOf(User.defaultUser().email);
+        // The condition will be true 
+        if (index > -1) post.likes.splice(index, 1);
+        this._postSubscription = this._postService.editPost(post).subscribe(() => this._router.navigate(["/"]));
+     }
+
+    private _unsubscribePostCreation(): void {
+        if (this._postSubscription) {
+            this._postSubscription.unsubscribe();
+        }
+    }
 
 }

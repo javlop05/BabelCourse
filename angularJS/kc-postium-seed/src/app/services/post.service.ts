@@ -37,6 +37,16 @@ export class PostService {
                    .map((response: Response) => Post.fromJsonToList(response.json()));
     }
 
+    getPostsWithFilter(filter: string): Observable<Post[]> {
+        const actualDate = new Date().getTime();
+
+        console.log('filtrando');
+
+        return this._http
+                   .get(`${this._backendUri}/posts?q=${filter}&publicationDate_lte=${actualDate}&_sort=publicationDate&_order=DESC`)
+                   .map((response: Response) => Post.fromJsonToList(response.json()));
+    }
+
     getUserPosts(id: number): Observable<Post[]> {
 
         /*----------------------------------------------------------------------------------------------|

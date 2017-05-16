@@ -83,3 +83,30 @@
 .editPost:hover {
      cursor: pointer;
 }
+
+.like {
+    display: inline-block;
+    color: #3b5998;
+    margin-left: 20px;
+}
+
+
+.like .likeButton {
+    display: block;
+}
+
+.like .likeButton img {
+    object-fit: cover;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.likeButton:hover {
+    cursor: pointer;
+}
+
+.like .counter {
+    display: block;
+    font-size: 0.8em;
+}

@@ -21,6 +21,19 @@
         <span class="date">{{ post.publicationDate | datePipe }}</span>
     </div>
 </div>
+<div class="like">
+    <span class="likeButton" (click)="notifyClickOnDislike()" *ngIf="iLike; else iDontLike"> 
+        <img src="assets/images/Facebook_dislike_thumb.png">
+        Ya no me gusta
+     </span>
+     <ng-template #iDontLike>
+        <span class="likeButton" (click)="notifyClickOnLike()">
+            <img src="assets/images/Facebook_like_thumb.png">
+            Me gusta
+        </span>
+     </ng-template>
+    <span class="counter">{{ post.likes.length }}</span>
+</div>
 <span class="editPost blink-font" *ngIf="editable" (click)="notifyClickOnEdit()">Editar</span>
 <!--
 |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|

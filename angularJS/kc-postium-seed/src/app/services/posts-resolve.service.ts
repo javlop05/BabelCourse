@@ -32,6 +32,13 @@ export class PostsResolve implements Resolve<Post[]> {
          if (route.params.categoryId)
             return this._postService.getCategoryPosts(parseInt(route.params.categoryId));
 
+
+         // Search posts
+         if (route.params.filter) {
+            return this._postService.getPostsWithFilter(route.params.filter);
+         }
+
+
         return this._postService.getPosts();
     }
 }

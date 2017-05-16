@@ -20,4 +20,6 @@
               [post]="post" 
               (clickOnPost)="showPostDetails($event)"
               (clickOnAuthor)="showPostsOfAuthor($event)"
-              (clickOnEdit)="showPostEdition($event)"></post-preview>
+              (clickOnEdit)="showPostEdition($event)"
+              (clickOnLike)="likePost($event)"
+              (clickOnDislike)="dislikePost($event)"></post-preview>

@@ -12,7 +12,8 @@ export class Post {
         public publicationDate: number,
         public categories: Category[],
         public author: User,
-        public likes: number
+        //public likes: number
+        public likes: string[]
     ) { }
 
     static fromJson(json: any): Post {

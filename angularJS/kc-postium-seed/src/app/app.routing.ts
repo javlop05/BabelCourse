@@ -8,10 +8,22 @@ import { PostDetailsComponent } from "./components/post-details/post-details.com
 import { UserPostsComponent } from "./components/user-posts/user-posts.component";
 import { PostDetailsResolve } from "./services/post-details-resolve.service";
 import { PostsResolve } from "./services/posts-resolve.service";
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
     {
+        path: "login",
+        component: LoginComponent
+    },
+    {
         path: "posts",
+        component: NewsComponent,
+        resolve: {
+            posts: PostsResolve
+        }
+    },
+    {
+        path: "posts/search/:filter",
         component: NewsComponent,
         resolve: {
             posts: PostsResolve

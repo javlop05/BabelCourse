@@ -11,15 +11,24 @@ import { User } from '../../models/user';
 export class PostPreviewComponent implements OnInit {
 
     editable: boolean = false;
+    iLike: boolean = false;
 
     @Input() post: Post;
 
     @Output() clickOnPost: EventEmitter<Post> = new EventEmitter();
     @Output() clickOnAuthor: EventEmitter<User> = new EventEmitter();
     @Output() clickOnEdit: EventEmitter<Post> = new EventEmitter();
+    @Output() clickOnLike: EventEmitter<Post> = new EventEmitter();
+    @Output() clickOnDislike: EventEmitter<Post> = new EventEmitter();
 
     ngOnInit(): void {
         this.editable = (this.post.author.id == User.defaultUser().id);
+        this.iLike = 
+            (this.post.likes.findIndex(
+                (element) => {
+                    return element===User.defaultUser().email;
+                }
+            ) !== -1);
     }
 
     /*------------------------------------------------------------------------------------------------------------------|
@@ -51,5 +60,15 @@ export class PostPreviewComponent implements OnInit {
 
     notifyClickOnEdit() {
         this.clickOnEdit.emit(this.post);
+    }
+
+    notifyClickOnLike() {
+        this.iLike = true;
+        this.clickOnLike.emit(this.post);
+    }
+
+    notifyClickOnDislike() {
+        this.iLike = false;
+        this.clickOnDislike.emit(this.post);
     }
 }
