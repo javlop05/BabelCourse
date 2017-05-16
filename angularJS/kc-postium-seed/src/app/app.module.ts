@@ -31,6 +31,7 @@ import { SearchBoxComponent } from "./components/search-box/search-box.component
 import { UserPostsComponent } from "./components/user-posts/user-posts.component";
 import { FromNowPipe } from './pipes/from-now.pipe';
 import { LoginComponent } from './components/login/login.component';
+import { AuthenticationService } from './services/auth.service';
 
 @NgModule({
     imports: [
@@ -70,6 +71,7 @@ import { LoginComponent } from './components/login/login.component';
         PostDetailsResolve,
         PostService,
         PostsResolve,
+        AuthenticationService
     ],
     bootstrap: [
         AppComponent
