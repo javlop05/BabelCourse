@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { AuthenticationService } from '../../services/auth.service';
 
 @Component({
     templateUrl: 'login.component.html',
@@ -6,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class LoginComponent implements OnInit {
-    constructor() { }
 
-    ngOnInit() { }
+    constructor(private _authService: AuthenticationService) { }
+
+    ngOnInit(): void {
+        this._authService.checkCredentials();
+    }
+
+    login(loginForm: FormGroup) {
+        this._authService.login(loginForm.value.email, loginForm.value.password);
+    }
 }

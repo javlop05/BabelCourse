@@ -27,3 +27,11 @@
 .action-link a {
     text-decoration: none;
 }
+
+.logout {
+    margin-left: 15px;
+}
+
+.logout:hover {
+    cursor: pointer;
+}

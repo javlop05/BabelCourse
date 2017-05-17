@@ -47,3 +47,20 @@ h1 {
 .login-block button:hover {
     background: #4bc097;
 }
+
+.error-message {
+    color: red;
+}
+
+button:disabled {
+    background-color: lightgrey;
+    border: 1px solid gray;
+}
+
+input.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+
+input.ng-touched.ng-valid {
+    border: 1px solid green;
+}

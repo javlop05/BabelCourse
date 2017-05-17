@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { Post } from '../../models/post';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../../services/auth.service';
 
 @Component({
     selector: "header-bar",
@@ -9,9 +10,15 @@ import { Router } from '@angular/router';
 })
 export class HeaderBarComponent {
 
-    constructor(private _router: Router) {}
+    constructor(
+        private _router: Router,
+        private _authService: AuthenticationService) {}
 
     searchPosts(filter: string) {
         this._router.navigate([`posts/search/${filter}`]);
+    }
+
+    logout() {
+        this._authService.logout();
     }
  }
