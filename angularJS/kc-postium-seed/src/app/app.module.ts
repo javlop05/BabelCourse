@@ -32,6 +32,8 @@ import { UserPostsComponent } from "./components/user-posts/user-posts.component
 import { FromNowPipe } from './pipes/from-now.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { AuthenticationService } from './services/auth.service';
+import { RegisterComponent } from './components/register/register.component';
+import { UsersService } from "./services/users.service";
 
 @NgModule({
     imports: [
@@ -63,7 +65,8 @@ import { AuthenticationService } from './services/auth.service';
         SearchBoxComponent,
         UserPostsComponent,
         FromNowPipe,
-        LoginComponent
+        LoginComponent,
+        RegisterComponent
     ],
     providers: [
         BackendUriProvider,
@@ -71,7 +74,8 @@ import { AuthenticationService } from './services/auth.service';
         PostDetailsResolve,
         PostService,
         PostsResolve,
-        AuthenticationService
+        AuthenticationService,
+        UsersService
     ],
     bootstrap: [
         AppComponent

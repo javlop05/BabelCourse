@@ -30,4 +30,8 @@ export class User {
             "1234"
         )
     }
+
+    static getLoggedUser(): User {
+        return User.fromJson(JSON.parse(localStorage.getItem("user")));
+    }
 }

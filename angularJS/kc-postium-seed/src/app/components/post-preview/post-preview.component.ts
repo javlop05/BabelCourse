@@ -22,11 +22,11 @@ export class PostPreviewComponent implements OnInit {
     @Output() clickOnDislike: EventEmitter<Post> = new EventEmitter();
 
     ngOnInit(): void {
-        this.editable = (this.post.author.id == User.defaultUser().id);
+        this.editable = (this.post.author.id == User.getLoggedUser().id);
         this.iLike = 
             (this.post.likes.findIndex(
                 (element) => {
-                    return element===User.defaultUser().email;
+                    return element===User.getLoggedUser().email;
                 }
             ) !== -1);
     }

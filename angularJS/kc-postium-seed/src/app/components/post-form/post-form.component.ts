@@ -80,7 +80,7 @@ export class PostFormComponent implements OnInit {
         post.body = (post.body) ? post.body : null;
 
         post.likes = [];
-        post.author = User.defaultUser();
+        post.author = User.getLoggedUser();
         post.publicationDate = this._getPostPublicationDate(form.value.publicationDate);
 
         if(!this.creatingNew) {

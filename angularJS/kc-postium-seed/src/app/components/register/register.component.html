@@ -1,21 +1,33 @@
 <h1 class="blink-font"> Postium </h1>
 <div class="login-block blink-font">    
-    <h3>Login</h3>
-    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" novalidate>
+    <h3>Registro</h3>
+    <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" novalidate>
         <input type="text" 
             ngModel
             #emailRef="ngModel"
             name="email" 
-            placeholder="email@example.com"
+            placeholder="Email"
             pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$" 
             required>
         <input type="password" 
             ngModel
             #passwordRef="ngModel"
             name="password" 
-            placeholder="password" 
+            placeholder="Contraseña" 
             required>
-        <button type="submit">Entrar</button>
+         <input type="text" 
+            ngModel
+            #nameRef="ngModel"
+            name="name" 
+            placeholder="Nombre"
+            required>
+         <input type="text" 
+            ngModel
+            #usernameRef="ngModel"
+            name="username" 
+            placeholder="Nombre de usuario"
+            required>
+        <button type="submit">Registrarse</button>
         <div *ngIf="(passwordRef.touched && passwordRef.errors?.required)
                     || (emailRef.touched && emailRef.errors?.required)" 
               class="error-message">
@@ -26,5 +38,5 @@
               <span> Por favor, introduce un email valido </span>
         </div>
     </form>
-    <a routerLink="/register">¿No estas registrado? Crear una cuenta</a>
+    <a routerLink="/login">Ya tengo una cuenta, iniciar sesión</a>
 </div>

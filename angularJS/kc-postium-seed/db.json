@@ -75,11 +75,6 @@
         "avatar": "assets/images/hank-moody.jpg"
       },
       "likes": [
-        "keepcoder@postium.com",
-        "keepcoder@postium.com",
-        "keepcoder@postium.com",
-        "keepcoder@postium.com",
-        "keepcoder@postium.com",
         "keepcoder@postium.com"
       ]
     },
@@ -291,22 +286,66 @@
         "email": "keepcoder@postium.com",
         "avatar": "assets/images/keepcoder.jpg"
       },
-      "likes": []
+      "likes": [
+        "pabloaragon@example.es",
+        "alzate@gmail.com"
+      ]
     },
     {
       "id": 13,
-      "title": "PARDAODL;ADL",
-      "intro": "gaSD:AREG",
+      "title": "mriiam",
+      "intro": "miriam",
       "body": "SDGEARGRASSDFGaer",
-      "publicationDate": 1494581629594,
+      "publicationDate": 1495013265165,
       "author": {
         "id": 1,
         "name": "KeepCoder",
         "username": "keepcoder",
         "email": "keepcoder@postium.com",
-        "avatar": "assets/images/keepcoder.jpg"
+        "avatar": "assets/images/keepcoder.jpg",
+        "password": "1234"
       },
-      "likes": []
+      "likes": [
+        "keepcoder@postium.com",
+        "alzate@gmail.com"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "hfjgh",
+      "intro": "sdfgjhklñ",
+      "body": "´dxcfghjklñ",
+      "publicationDate": 1495014799047,
+      "author": {
+        "id": 1,
+        "name": "KeepCoder",
+        "username": "keepcoder",
+        "email": "keepcoder@postium.com",
+        "avatar": "assets/images/keepcoder.jpg",
+        "password": "1234"
+      },
+      "likes": [
+        "pabloaragon@example.es",
+        "keepcoder@postium.com"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "este post es de prueba",
+      "intro": "probando crear posts",
+      "body": "esta es la historia",
+      "publicationDate": 1495183402622,
+      "author": {
+        "id": 6,
+        "name": "alzate",
+        "username": "alzate",
+        "email": "alzate@gmail.com",
+        "avatar": "assets/images/default.jpg",
+        "password": "1234"
+      },
+      "likes": [
+        "javi@gmail.com"
+      ]
     }
   ],
   "categories": [
@@ -337,28 +376,56 @@
       "name": "KeepCoder",
       "username": "keepcoder",
       "email": "keepcoder@postium.com",
-      "avatar": "assets/images/keepcoder.jpg"
+      "avatar": "assets/images/keepcoder.jpg",
+      "password": "1234"
     },
     {
       "id": 2,
       "name": "Booker DeWitt",
       "username": "bOoKeRdEwItT",
       "email": "booker.dewitt@columbia.com",
-      "avatar": "assets/images/booker-dewitt.jpg"
+      "avatar": "assets/images/booker-dewitt.jpg",
+      "password": "1234"
     },
     {
       "id": 3,
       "name": "Denny Crane",
       "username": "keepcoder",
       "email": "flamingo@madcow.com",
-      "avatar": "assets/images/denny-crane.jpg"
+      "avatar": "assets/images/denny-crane.jpg",
+      "password": "1234"
     },
     {
       "id": 4,
       "name": "Hank Moody",
       "username": "godhatesusall",
       "email": "ilove@runkle.com",
-      "avatar": "assets/images/hank-moody.jpg"
+      "avatar": "assets/images/hank-moody.jpg",
+      "password": "1234"
+    },
+    {
+      "name": "1234",
+      "username": "1234",
+      "email": "pabloaragon@example.es",
+      "avatar": "assets/images/default.jpg",
+      "password": "1234",
+      "id": 5
+    },
+    {
+      "name": "alzate",
+      "username": "alzate",
+      "email": "alzate@gmail.com",
+      "avatar": "assets/images/default.jpg",
+      "password": "1234",
+      "id": 6
+    },
+    {
+      "name": "javi",
+      "username": "javilopez",
+      "email": "javi@gmail.com",
+      "avatar": "assets/images/default.jpg",
+      "password": "1234",
+      "id": 7
     }
   ]
 }

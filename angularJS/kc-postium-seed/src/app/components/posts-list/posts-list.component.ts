@@ -52,13 +52,13 @@ export class PostsListComponent implements OnDestroy {
 
      likePost(post: Post) {
         this._unsubscribePostCreation();
-        post.likes.push(User.defaultUser().email);
+        post.likes.push(User.getLoggedUser().email);
         this._postSubscription = this._postService.editPost(post).subscribe(() => this._router.navigate(["/"]));
      }
 
      dislikePost(post: Post) {
         this._unsubscribePostCreation();
-        const index = post.likes.indexOf(User.defaultUser().email);
+        const index = post.likes.indexOf(User.getLoggedUser().email);
         // The condition will be true 
         if (index > -1) post.likes.splice(index, 1);
         this._postSubscription = this._postService.editPost(post).subscribe(() => this._router.navigate(["/"]));

@@ -28,11 +28,11 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this._activatedRoute.data.forEach((data: { post: Post }) => this.post = data.post);
         window.scrollTo(0, 0);
-        this.editable = (this.post.author.id == User.defaultUser().id);
+        this.editable = (this.post.author.id == User.getLoggedUser().id);
         this.iLike =
             (this.post.likes.findIndex(
                 (element) => {
-                    return element === User.defaultUser().email;
+                    return element === User.getLoggedUser().email;
                 }
             ) !== -1);
     }
@@ -76,14 +76,14 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
     likePost() {
         this.iLike = true;
         this._unsubscribePostCreation();
-        this.post.likes.push(User.defaultUser().email);
+        this.post.likes.push(User.getLoggedUser().email);
         this._postSubscription = this._postService.editPost(this.post).subscribe();
     }
 
     dislikePost() {
         this.iLike = false;
         this._unsubscribePostCreation();
-        const index = this.post.likes.indexOf(User.defaultUser().email);
+        const index = this.post.likes.indexOf(User.getLoggedUser().email);
         // The condition will be true 
         if (index > -1) this.post.likes.splice(index, 1);
         this._postSubscription = this._postService.editPost(this.post).subscribe();

@@ -1,4 +1,4 @@
-import { Inject, Injectable } from "@angular/core";
+import { Inject, Injectable, Output, EventEmitter } from '@angular/core';
 import { Http, Response } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
@@ -6,28 +6,31 @@ import "rxjs/add/operator/map";
 import { BackendUri } from "./settings.service";
 import { User } from '../models/user';
 import { Router } from '@angular/router';
+import { UsersService } from 'app/services/users.service';
 
 
 @Injectable()
 export class AuthenticationService {
 
+    authenticated: EventEmitter<boolean> = new EventEmitter();
+
     constructor(
         private _router: Router,
-        private _http: Http,
-        @Inject(BackendUri) private _backendUri: any) { }
+        private _usersService: UsersService) { }
 
     logout() {
         localStorage.removeItem("user");
         this._router.navigate(['/login']);
+        this.authenticated.emit(false);
     }
 
     login(email, password) {
-        this.findUser(email, password).subscribe(
+        this._usersService.findUser(email, password).subscribe(
             (user) => {
-                console.log(user);
                 if (user) {
-                    localStorage.setItem("user", user.email);
+                    localStorage.setItem("user", JSON.stringify(user));
                     this._router.navigate(['/']);
+                    this.authenticated.emit(true);
                 }
             },
             (err) => console.error('login incorrecto'), 
@@ -43,9 +46,7 @@ export class AuthenticationService {
         return true;
     }
 
-    private findUser(email: string, password: string): Observable<User> {
-        return this._http
-            .get(`${this._backendUri}/users?email=${email}&password=${password}`)
-            .map((response: Response) => User.fromJson(response.json()));
+    getAuthEmitter(): EventEmitter<boolean> {
+        return this.authenticated;
     }
 }
