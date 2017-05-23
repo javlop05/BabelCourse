@@ -72,15 +72,26 @@
         // sessionStorage.setItem('name', $('input[name="gender"]').val());
         // sessionStorage.setItem('name', $('input[name="birthdate"]').val());
 
-        window.service.contact.send({
+        var user = {
             name: $('input[name="name"]').val(),
-            email: $('input[name="email"]').val(),
-            message: $('textarea[name="message"]').val()
-        }).then(function() {
-            alert('sended!');
-        }).catch(function() {
-            alert('something happend!');
-        })
+            birthdate: $('input[name="birthdate"]').val(),
+            email: $('input[name="email"]').val()
+        }
+
+        db.save(user);
+
+        var data = JSON.parse(JSON.stringify(user));
+
+        delete data.birthdate;
+
+        data.message = $('textarea[name="message"]').val();
+
+        window.service.contact.send(data)
+            .then(function() {
+                alert('sended!');
+            }).catch(function() {
+                alert('something happend!');
+            })
     });
 
 })();
