@@ -14,7 +14,7 @@
         if (gender) {
             $('input[value="' + gender + '"]').attr('checked', 'checked');
         }
-        
+
         // $('input').each(function(index, elem) {
         //     $('#' + elem.name).val(sessionStorage.getItem(elem.name));
 
