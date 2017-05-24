@@ -9,6 +9,7 @@
     overflow: hidden;
     height: 70vh;
     box-sizing: border-box;
+    padding: 0;
 }
 
 #team article.over {
@@ -81,3 +82,38 @@
         transform: translate(0);
     }
 }
+
+/*
+> 960             6
+960px > x > 650px 3*3
+650px > x > 320px 2*2*2
+320px > x         1*1*1*1*1*1
+*/
+
+/*
+@media all and (max-width: 960px) {
+    #team div {
+        flex-wrap: wrap;
+    }
+}
+
+@media all and (max-width: 320px) {
+    #team article {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 321px) and (max-width: 650px) {
+    #team article {
+        width: 50%;
+    }
+}
+
+@media all and (min-width: 650px) and (max-width: 960px) {
+    #team article {
+        width: 33%;
+    }
+}*/
+
+
+

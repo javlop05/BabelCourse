@@ -43,7 +43,7 @@ $(document).ready(function() {
         document.body.appendChild(btn);
     }*/
 
-    for (var i = 0; i < 5; i++) {
+    /*for (var i = 0; i < 5; i++) {
         var btn = document.createElement('button');
         btn.appendChild(document.createTextNode('Button ' + i));
         btn.addEventListener('click', (function(i) {
@@ -55,5 +55,5 @@ $(document).ready(function() {
         })(i));
 
         document.body.appendChild(btn);
-    }
+    }*/
 });
