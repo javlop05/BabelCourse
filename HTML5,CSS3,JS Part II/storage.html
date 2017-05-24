@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+    //El navegador soporta Web Storage
+    //Setter
+
+    // Todo lo que se guarda en el localStorage se guarda como string
+    // session storage for time lifespan
+    if (localStorage.getItem("pageItem")) {
+        console.log("Ya existe");
+
+    } else {
+        localStorage.setItem("pageItem", 10);
+    }
+    localStorage.setItem("obj", JSON.stringify({
+        val1: true
+    }));
+    //Getter
+    var size = localStorage.getItem("pageSize");
+    console.log(size);
+    var obj = localStorage.getItem("obj");
+    console.log(JSON.parse(obj));
+    </script>
+</body>
+
+</html>
