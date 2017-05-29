@@ -1,0 +1,19 @@
+{
+  "name": "funcy",
+  "version": "0.0.1",
+  "homepage": "https://github.com/javlop05/BabelCourse",
+  "authors": [
+    "Javier Lopez <javilopezdelerma84@gmail.com>"
+  ],
+  "description": "An example proyect for learning purposes",
+  "main": "",
+  "keywords": [
+    "babel",
+    "keepcoding",
+    "learning"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7"
+  }
+}
