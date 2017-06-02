@@ -1,0 +1,25 @@
+#home {
+    color: #383d48;
+    height: 75vh;
+    background-image: url("../../assets/images/banner.png");
+    background-size: cover;
+    line-height: 26px;
+    text-align: center;
+    position: relative;
+    h1 {
+        font-size: 56px;
+    }
+    h2 {
+        font-size: 21px;
+        font-weight: 400;
+    }
+    img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 978px;
+        margin: 0 auto;
+    }
+}

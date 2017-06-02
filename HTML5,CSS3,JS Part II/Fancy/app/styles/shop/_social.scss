@@ -1,0 +1,40 @@
+.social {
+    font-size: 12px;
+    p {
+        text-align: center;
+        .btn {
+            width: 80%;
+        }
+    }
+    .title {
+        font-weight: bold;
+        font-size: 15px;
+    }
+    .panel-footer {
+        background-color: white;
+        color: #4978b3;
+        font-weight: bold;
+        text-transform: uppercase;
+        a {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    ul {
+        padding: 0;
+        li {
+            display: inline-block;
+            a {
+                color: grey;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            &::after {
+                content: "·";
+                margin-left: 4px;
+            }
+        }
+    }
+}

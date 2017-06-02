@@ -16,28 +16,30 @@
     <!-- endbuild -->
 </head>
 
-<body>
+<body class="index">
     <nav class="navbar navbar-default">
-        <div class="container">
-            <form class="navbar-form navbar-left form-inline">
-                <div class="form-group">
-                    <i class="glyphicon glyphicon-search left-addon"></i>
-                    <input type="text" class="form-control" placeholder="Search Fancy">
+        <div class="row">
+            <form class="form-group col-md-2 col-md-offset-1">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">
+                            <i class="glyphicon glyphicon-search left-addon"></i>
+                        </span>
+                    <input type="text" class="form-control" placeholder="Search Fancy" aria-describedby="basic-addon1">
                 </div>
             </form>
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
+            <div class="navbar-header text-center col-md-2 col-md-offset-2">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">FANCY</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+            <div class="collapse navbar-collapse col-md-2 col-md-offset-1" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
                     <li><a href="#">Join Fancy</a></li>
                     <li><a href="#">Login</a></li>
                     <li class="dropdown">
@@ -88,16 +90,105 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <div class="container">
-    </div>
-    <!-- build:js(.) /scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- glob patern -->
-    <!-- include: "type": "js", "files": ["scripts/**/*.js"], "baseUrl": "/" -->
+    <main>
+        <section class="trending col-lg-offset-1 col-lg-2 col-xs-12">
+            <ul>
+                <li>
+                    TRENDING
+                    <ul>
+                        <li><a href="#"> Samurai Sword</a></li>
+                        <li><a href="#">Richard Clarkson</a></li>
+                        <li><a href="#">Vanity Number</a></li>
+                        <li><a href="#">roosmarijn de kok</a></li>
+                        <li><a href="#">FLI Charge Station</a></li>
+                        <li><a href="#">Fancy Gift Card</a></li>
+                        <li><a href="#">Yeezy</a></li>
+                        <li><a href="#">Michael B. Jordan</a></li>
+                        <li><a href="#">Robots</a></li>
+                        <li><a href="#">Hermès</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section class="products col-lg-5 col-xs-12 col-md-8">
+        </section>
+        <section class="social col-lg-3 col-xs-12 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p class=title>Fancy is more fun with friends!</p>
+                    <p class="subtitle">Log in to see what your friends are up to.</p>
+                    <p><button class="btn btn-primary">Log in with Facebook</button></p>
+                    <p><button class="btn btn-info">Log in with Twitter</button></p>
+                </div>
+                <div class="panel-footer">
+                    <p><a href="#">JOIN FANCY</a></p>
+                </div>
+            </div>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Sell on Fancy</a></li>
+                <li><a href="#">Get the app</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal fade" id="1" tabindex="-1" role="dialog" aria-hidden="true">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        <div class="modal-dialog container-fluid" role="document">
+            <div id="content" class="modal-content row">
+                <div class="panel panel-default col-md-5 col-md-offset-2 col-xs-6">
+                    <div class="panel-body">
+                        <img src="assets/images/banner.png">
+                    </div>
+                    <div class="panel-footer container-fluid">
+                        <div class="row">
+                            <div class="images col-xs-3">
+                                <img class="detail" src="assets/images/banner.png">
+                                <img class="detail" src="assets/images/banner.png">
+                                <img class="detail" src="assets/images/banner.png">
+                                <img class="detail" src="assets/images/banner.png">
+                            </div>
+                            <div class="description col-xs-9 text-left">
+                                <p><strong>Description</strong></p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit reprehenderit sed sequi, ipsa nulla.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default info col-md-3 col-md-offset-1 col-xs-6 text-left">
+                    <div class="panel-body">
+                        <p><strong>Leather pants</strong></p>
+                        <p><strong>$150</strong>USD</p>
+                        <p>APROXIMATELY €116 GBP</p>
+                        <button class="btn btn-success">Add to Cart</button>
+                    </div>
+                    <div class="panel-footer text-left">
+                        <button class="btn btn-default likes">136</button>
+                    </div>
+                    <div class="panel-footer">
+                        <a href="#"><i class="glyphicon glyphicon-share-alt"></i>Share</a>
+                        <a href="#"><i class="glyphicon glyphicon-plus"></i>List</a>
+                    </div>
+                </div>
+                <div class="panel panel-default more-products col-md-8 col-md-offset-2 col-md-offset-1 col-xs-12 text-left">
+                    <h4 class="black">Yoy may also Fancy</h4>
+                    <h4 class="shadow">Recently viewed</h4>
+                </div>
+            </div>
+            <!-- build:js(.) /scripts/vendor.js -->
+            <!-- bower:js -->
+            <script src="bower_components/jquery/dist/jquery.js"></script>
+            <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+            <!-- endbower -->
+            <!-- endbuild -->
+            <!-- glob patern -->
+            <!-- include: "type": "js", "files": ["scripts/**/*.js"], "baseUrl": "/" -->
 </body>
 
 </html>

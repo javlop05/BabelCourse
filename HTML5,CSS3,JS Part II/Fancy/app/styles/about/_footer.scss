@@ -1,0 +1,31 @@
+footer {
+    padding-top: 20px;
+    background-color: #e7eaee;
+    .row {
+        margin: 0 auto;
+        padding-top: 50px;
+        max-width: $screen-md;
+        .link {
+            padding-left: 40px;
+            margin-bottom: 15px;
+            .brand {
+                font-weight: bold;
+                letter-spacing: 2px;
+                color: rgba(0, 0, 0, 0.7);
+                font-size: 18px;
+                img {
+                    margin-right: 10px;
+                }
+            }
+        }
+        ul {
+            list-style: none;
+        }
+        .social {
+            li {
+                display: inline-block;
+                padding-right: 17px
+            }
+        }
+    }
+}

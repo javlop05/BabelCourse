@@ -1,0 +1,23 @@
+.location {
+    background-color: #e7eaee;
+    height: 70vh;
+    .row {
+        height: 100%;
+        .map {
+            height: 100%;
+            border-top: 1px solid #eaeef1;
+            border-bottom: 1px solid #eaeef1;
+            padding-bottom: 39px;
+            h3 {
+                font-weight: 400;
+                padding: 10px;
+            }
+            iframe {
+                width: 100%;
+                height: calc(100% - 46.3px);
+                padding: 0;
+                border: 2px solid #d1d2d3;
+            }
+        }
+    }
+}

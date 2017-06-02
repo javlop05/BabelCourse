@@ -1,0 +1,33 @@
+#login {
+    .close {
+        margin-top: 0;
+    }
+    .modal-title {
+        color: #3098dc;
+        font-weight: bold;
+    }
+    .modal-body {
+        font-size: 15px;
+        width: 80%;
+        margin: auto;
+        .form-group {
+            label {
+                padding: 10px;
+                padding-left: 0px;
+                text-transform: uppercase;
+                color: #3098dc;
+            }
+            input {
+                background-color: #ebeced;
+            }
+        }
+    }
+    .modal-footer {
+        width: 80%;
+        margin: auto;
+        .btn-primary {
+            background-color: #3098dc;
+            padding: 10px;
+        }
+    }
+}

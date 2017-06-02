@@ -27,7 +27,7 @@ module.exports = function(grunt) {
             livereload: {
                 options: {
                     open: true,
-                    base: ['.tmp', '.', 'app']
+                    base: ['.tmp', 'bower_components', '.', 'app']
                 }
             },
             dist: {
@@ -75,7 +75,8 @@ module.exports = function(grunt) {
         wiredep: {
             app: {
                 src: [
-                    '<%= appConfig.app %>/index.html'
+                    '<%= appConfig.app %>/index.html',
+                    '<%= appConfig.app %>/about.html'
                 ],
                 ignorePath: /\.\.\//
             },
@@ -91,12 +92,14 @@ module.exports = function(grunt) {
             },
             server: {
                 files: {
-                    '.tmp/index.html': '<%= appConfig.app %>/index.html'
+                    '.tmp/index.html': '<%= appConfig.app %>/index.html',
+                    '.tmp/about.html': '<%= appConfig.app %>/about.html'
                 }
             },
             dist: {
                 files: {
-                    '<%= appConfig.dist %>/index.html': '<%= appConfig.app %>/index.html'
+                    '<%= appConfig.dist %>/index.html': '<%= appConfig.app %>/index.html',
+                    '<%= appConfig.dist %>/about.html': '<%= appConfig.app %>/about.html'
                 }
             }
         },

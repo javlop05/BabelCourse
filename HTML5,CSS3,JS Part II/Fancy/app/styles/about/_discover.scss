@@ -1,0 +1,24 @@
+.discover {
+    max-width: 992px;
+    margin: auto;
+    text-align: center;
+    h3 {
+        max-width: 740px;
+        margin: 0 auto;
+        padding: 72px 10px 78px;
+        font-weight: 400;
+        line-height: 46px;
+        font-size: 28px;
+    }
+    .title {
+        display: block;
+        font-size: 18px;
+        font-weight: 600;
+        color: #383d48;
+        padding: 35px 0 12px;
+    }
+    .col-md-4,
+    .col-xs-12 {
+        margin-bottom: 50px;
+    }
+}

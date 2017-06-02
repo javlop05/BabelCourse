@@ -1,8 +1,29 @@
+@import 'variables';
 // bower:scss
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
-@import 'variables';
-@import 'nav';
+@import 'fonts';
+@import 'responsive';
+@import 'about/nav';
+@import 'about/home';
+@import 'about/discover';
+@import 'about/geo';
+@import 'about/beyond';
+@import 'about/join';
+@import 'about/footer';
+@import 'about/login';
+@import 'about/cookies';
+@import 'shop/nav';
+@import 'shop/trending';
+@import 'shop/products';
+@import 'shop/social';
+@import 'shop/modal';
 body {
     margin: 0;
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #74787e;
+}
+
+.index {
+    background-color: #ebeced;
 }

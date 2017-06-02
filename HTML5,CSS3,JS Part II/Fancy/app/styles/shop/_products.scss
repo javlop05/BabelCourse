@@ -1,0 +1,46 @@
+.panel.panel-product {
+    padding: 0;
+    font-size: 12px;
+    max-width: $screen-sm;
+    margin: auto;
+    .btn-default {
+        border: 1px solid rgba(71, 135, 197, 0.4);
+        border-radius: 3px;
+        white-space: nowrap;
+        color: #5b91c6;
+        background: #fff;
+        height: 24px;
+        font-size: 12px;
+        &:hover {
+            color: #427fbb;
+            border-color: rgba(71, 135, 197, 0.6);
+        }
+    }
+    .title {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        padding-bottom: 14px;
+        p {
+            color: black;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .likes {
+        color: #606A75;
+        border: 1px solid rgba(195, 194, 196, 0.45);
+        i {
+            margin-right: 5px;
+        }
+    }
+    img {
+        object-fit: cover;
+        width: 100%;
+    }
+    .panel-footer {
+        background-color: white;
+        border-top: none;
+    }
+}

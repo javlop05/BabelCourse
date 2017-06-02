@@ -1,0 +1,47 @@
+#menu-collapsed {
+    display: none!important;
+}
+
+.about {
+    margin-bottom: 0px;
+    padding-top: 10px;
+    z-index: 2;
+    .navbar-header {
+        float: right;
+        &:hover {
+            .icon-bar {
+                margin-top: 1px;
+            }
+        }
+        button {
+            border: none;
+            background-color: transparent;
+            .title {
+                display: inline-block;
+                font-size: 16px;
+                padding-right: 5px;
+                .icon-bar {
+                    transition: margin 0.3s;
+                }
+            }
+        }
+        .navbar-toggle {
+            display: inline-block;
+            &:hover {
+                border: none;
+                background: transparent;
+            }
+        }
+    }
+    .navbar-brand {
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 25px;
+    }
+}
+
+.transparent {
+    background-color: #e7eaee;
+}

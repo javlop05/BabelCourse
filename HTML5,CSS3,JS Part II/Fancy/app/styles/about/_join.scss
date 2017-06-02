@@ -1,0 +1,20 @@
+.join {
+    background-color: #e7eaee;
+    padding: 74px 0 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    button {
+        margin-top: 55px;
+        text-transform: uppercase;
+        color: #fff;
+        background: #3098dc;
+        border: 0;
+        border-radius: 3px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 46px;
+        &:hover {
+            background-color: #3ba4e8;
+        }
+    }
+}

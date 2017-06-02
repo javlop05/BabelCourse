@@ -1,0 +1,24 @@
+.beyond {
+    max-width: $screen-md;
+    margin: 10vh auto;
+    h3 {
+        margin-bottom: 33px;
+        color: black;
+    }
+    p {
+        display: block;
+        padding-bottom: 7px;
+    }
+    img {
+        object-fit: contain;
+        width: 100%;
+        max-width: 500px;
+    }
+    .description {
+        img {
+            margin: 0 auto;
+            margin-top: 28px;
+            width: auto;
+        }
+    }
+}
