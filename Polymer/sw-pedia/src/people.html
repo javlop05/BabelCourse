@@ -9,29 +9,77 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="./character-card.html">
 <link rel="import" href="shared-styles.html">
+<script src="https://cdn.rawgit.com/cfjedimaster/SWAPI-Wrapper/2c8a87c1/lib/swapi.js"></script>
 
 <dom-module id="my-view2">
-  <template>
+    <template>
     <style include="shared-styles">
       :host {
         display: block;
 
         padding: 10px;
       }
+      paper-card {
+         max-width: 500px;
+      }
+      .cafe-header { @apply --paper-font-headline; }
+      .cafe-light { color: var(--paper-grey-600); }
+      .cafe-location {
+        float: right;
+        font-size: 15px;
+        vertical-align: middle;
+      }
+      .cafe-reserve { color: var(--google-blue-500); }
+      iron-icon.star {
+        --iron-icon-width: 16px;
+        --iron-icon-height: 16px;
+        color: var(--paper-amber-500);
+      }
+      iron-icon.star:last-of-type { color: var(--paper-grey-500); }
     </style>
 
-    <div class="card">
-      <div class="circle">2</div>
-      <h1>View Two</h1>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
-      <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
-    </div>
-  </template>
+      <template is="dom-repeat" items="{{characters}}" as="character">
+        <template is="dom-if" if="{{isBirthdayUnknown(character)}}">
+          <character-card character="{{character}}"></character-card>
+        </template>
+    </template>
 
-  <script>
-    Polymer({
-      is: 'my-view2',
-    });
-  </script>
+    <paper-button raise on-tap="requestMoreCharacters">Cargar más personajes</paper-button>
+    <iron-request id="request"></iron-request>
+
+    </template>
+
+    <script>
+        Polymer({
+            is: 'my-view2',
+            attached: function() {
+                var self = this;
+                swapiModule.getPeople(this.randomPage(), function(characters) {
+                    self.characters = characters.results;
+                });
+            },
+            randomPage: () => Math.floor(Math.random() * 8) + 1,
+            isBirthdayUnknown: function(character) {
+                return character.birth_year !== 'unknown';
+            },
+            requestMoreCharacters: function() {
+                var that = this;
+                this.$.request.send({
+                        url: "http://swapi.co/api/people/".concat(this.randomPage())
+
+                    }).then(function(character) {
+                        var objectString = character.parseResponse();
+                        that.push('characters', JSON.parse(objectString));
+                        // Esto funciona para notificar a Polymer del cambio
+                        // en un path, no profundo, regularmente Strings
+                        //that.notifyPath('characters', that.characters);
+                    })
+                    .catch(function(err) {
+                        console.log(err);
+                    });
+            }
+        });
+    </script>
 </dom-module>
