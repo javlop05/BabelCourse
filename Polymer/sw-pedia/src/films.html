@@ -12,34 +12,41 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="./film-card.html">
 <link rel="import" href="shared-styles.html">
+<script src="https://cdn.rawgit.com/cfjedimaster/SWAPI-Wrapper/2c8a87c1/lib/swapi.js"></script>
 
 <dom-module id="my-view1">
     <template>
-      <style include="shared-styles">
-        :host {
-          display: block;
+        <style include="shared-styles">
+          :host {
+            display: block;
 
-          padding: 10px;
-        }
-        body {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      </style>
-      
-      <iron-ajax
-        auto
-        url="http://swapi.co/api/films"
-        handle-as="json"
-        on-response="handleResponse"
-        debounce-duration="300">
-      </iron-ajax>
+            padding: 10px;
+          }
+          body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        </style>
+        
+        <iron-ajax
+          auto
+          url="http://swapi.co/api/films"
+          handle-as="json"
+          on-response="handleResponse"
+          debounce-duration="300">
+        </iron-ajax>
 
-      
-      <template is="dom-repeat" items="{{films}}" as="film">
-        <film-card film="{{film}}"></film-card>
+        
+      <template is="dom-if" if ="{{_isSingleFilm()}}">
+        <film-card film="{{currentFilm}}"></film-card>
       </template>
+
+    <template is="dom-if" if="{{!_isSingleFilm()}}">
+          <template is="dom-repeat" items="{{films}}" as="film"> 
+            <film-card film="{{film}}"></film-card>
+          </template>
+    </template>
 
     </template>
 
@@ -52,6 +59,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             handleResponse: function(response) {
                 this.films = response.detail.response.results;
             },
+            attached: function() {
+                // El tail tiene 3 propiedades:
+                // Prefix: Toda la ruta canon, especificada en <app-route>
+                // tail: Información adicional a la ruta Canon
+                // _queryParams: toda información de filtros especiales ubicados después del ? en una url
+                var self = this;
+
+                if (this._isSingleFilm()) {
+                    var tail = document
+                        .querySelector('my-app')
+                        .root.querySelector('app-route')
+                        .tail.path;
+
+                    var filmId = tail.substr(tail.length - 1);
+                    var that = this;
+
+                    swapiModule.getFilm(filmId, function(film) {
+                        that.currentFilm = film;
+                    });
+                }
+            },
+            _isSingleFilm: function() {
+                var filmId = document
+                    .querySelector('my-app').root
+                    .querySelector('app-route')
+                    .tail.path;
+
+                var that = this;
+
+                return (filmId && filmId !== '/');
+            }
         });
     </script>
 </dom-module>
