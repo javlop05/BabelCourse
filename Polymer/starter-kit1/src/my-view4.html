@@ -1,0 +1,69 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view4">
+    <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+      paper-button {
+          background-color: var(--google-blue-100);
+          color: white;
+      }
+    </style>
+
+    <div class="card">
+      <div class="circle">4</div>
+      <h1>View Four</h1>
+      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
+      <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
+      <h1 id="numero">Valor actual: {{numero}}</h1>
+      <paper-button id="plus" on-tap="addNumber" raised>+</paper-button>
+      <paper-button id="substract" raised>+</paper-button>
+      <paper-button id="square" raised on-tap="squareNumber">X<sup>2</sup></paper-button>
+    </div>
+  </template>
+
+    <script>
+        Polymer({
+            is: 'my-view4',
+            properties: {
+                numero: {
+                    type: Number,
+                    value: 4,
+                    observer: '_lastValue'
+                }
+            },
+            listeners: {
+                "squareNumber": "_squareNumber"
+            },
+            attached: function() {
+                //this.$.plus.addEventListener('tap', () => this.numero = this.numero + 1);
+                this.$.substract.addEventListener('tap', () => this.numero = this.numero - 1);
+            },
+            addNumber: function() {
+                this.numero = this.numero + 1;
+            },
+            squareNumber: function() {
+                this.numero = this.numero * this.numero;
+            },
+            _lastValue = function(newValue, oldValue) {
+                this.pastValue = oldValue || 0;
+            }
+        });
+    </script>
+</dom-module>
