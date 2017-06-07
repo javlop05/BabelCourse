@@ -9,29 +9,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
-<link rel="import" href="../bower_components/paper-button/paper-button.html">
-<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
-<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="shared-styles.html">
-<link rel="import" href="./full-detailed-film.html">
 <script src="https://cdn.rawgit.com/cfjedimaster/SWAPI-Wrapper/2c8a87c1/lib/swapi.js"></script>
+<script src="../bower_components/ramda/dist/ramda.js"></script>
 
-<dom-module id="film-card">
+<dom-module id="full-detailed-film">
     <template>
     <style include="shared-styles">
       :host {
         display: block;
         padding: 10px;
       }
-      paper-dialog {
-          max-width: 800px;
-          max-height: 600px;
-      }
     </style>
 
-    <paper-card>
+    
+    <paper-card elevation=0>
         <div class="card-content">
             <div class="cafe-header">{{film.title}}
                 <div class="cafe-location cafe-light">
@@ -56,30 +50,52 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <paper-button on-tap="showFullDetails" class="cafe-reserve">Más información</paper-button>
             </div>
         </div>
+        <div class="card-actions">
+            <h1>Personajes de esta película</h1>
+            <div class="horizontal justified">
+                <template is="dom-repeat" items={{characters}} as="character">
+                     <paper-button noink>{{character.name}}</paper-button>
+                </template>
+    </div>
+    </div>
     </paper-card>
 
-    <paper-dialog id="current-film-dialog">
-        <paper-dialog-scrollable>
-               <full-detailed-film film={{film}}></full-detailed-film>
-        </paper-dialog-scrollable>
-        <div class="buttons">
-            <paper-button dialog-dismiss>Cancel</paper-button>
-            <paper-button dialog-confirm autofocus>OK</paper-button>
-        </div>
-    </paper-dialog>
-  </template>
+    </template>
 
     <script>
         Polymer({
-            is: 'film-card',
-            film: {
-                type: Object
+            is: 'full-detailed-film',
+            properties: {
+                film: {
+                    type: Object
+                }
             },
-            showFullDetails: function(event) {
-                var currentFilmDialog = this.root.querySelector('#current-film-dialog');
-                var fullDetailedFilm = this.root.querySelector('full-detailed-film');
-                currentFilmDialog.open();
-                fullDetailedFilm.fetchExtraData();
+            fetchExtraData: function() {
+                var that = this;
+
+                var collections = R.pick(['characters', 'planets', 'species', 'starships', 'vehicles'], that.film);
+
+                var charactersPromise = R.map(
+                    function(character) {
+                        return new Promise((resolve, reject) => {
+                            swapiModule.getPerson(character.split('people/')[1].split('/')[0], function(character) {
+                                if (!character) {
+                                    reject(new Error('Error al cargar el personaje'));
+                                    return;
+                                }
+                                resolve(character);
+                            });
+                        });
+                    }, collections.characters);
+
+                Promise.all(charactersPromise)
+                    .then(function(characters) {
+                        console.log(characters);
+                        that.characters = characters;
+                    })
+                    .catch(function(err) {
+                        console.log(err);
+                    })
             }
         });
     </script>
